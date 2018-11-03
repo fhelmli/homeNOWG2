@@ -1,7 +1,7 @@
 #!/usr/bin/env python2
 
 ################################
-inAnApp = False
+inAnApp = True
 ################################
 
 if inAnApp:
