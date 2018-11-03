@@ -29,7 +29,7 @@ BaseHTTPRequestHandler = SimpleHTTPServer.SimpleHTTPRequestHandler
 
 class MyServer(BaseHTTPRequestHandler):
 
-	#	GET is for clients geting the predi
+	#	GET is for view getting data from view controller (= a HTTP server in our case)
 	def do_GET(self):
 		self.send_response(200, 'OK')
 		self.send_header('Content-type', 'html')
@@ -815,6 +815,8 @@ else:
 # HTML zu Python: (User-Events, Seite geladen): Ajax zum HTTP-Server
 
 # Python zu HTML: Ajax in Dauerschleife, wenn Jacascript-Antwort von Python kommt: dieses ausfuehren
+
+# events von SVGs und buttons etc. zu Python, und z.B. redrawWidget, redrawWindow, redrawPage-events ueber Ajax u Python
 
 #Editier-stuff: native UI-Elemente mit der Portablen LIb fuer Kivy und Pythonista ueber dem WebView einblenden
 
