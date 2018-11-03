@@ -1,3 +1,4 @@
+#import pythonista
 
 """Simple API for XML (SAX) implementation for Python.
 

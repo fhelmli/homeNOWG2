@@ -1,3 +1,4 @@
+#import pythonista
 
 """JSON token scanner
 """

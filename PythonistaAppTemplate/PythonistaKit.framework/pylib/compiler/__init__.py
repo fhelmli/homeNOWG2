@@ -1,3 +1,4 @@
+#import pythonista
 
 """Package for parsing and compiling Python source code
 

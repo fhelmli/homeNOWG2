@@ -1,3 +1,4 @@
+#import pythonista
 
 """Run all test cases.
 """

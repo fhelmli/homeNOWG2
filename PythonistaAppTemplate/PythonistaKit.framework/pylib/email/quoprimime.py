@@ -1,3 +1,4 @@
+#import pythonista
 # Copyright (C) 2001-2006 Python Software Foundation
 # Author: Ben Gertzfield
 # Contact: email-sig@python.org

@@ -1,3 +1,4 @@
+#import pythonista
 #------------------------------------------------------------------------
 #
 # Copyright (C) 2000 Autonomous Zone Industries
