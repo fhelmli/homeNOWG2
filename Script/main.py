@@ -23,7 +23,7 @@ numTetrisGames = 1
 
 
 hostName = ""
-hostPort = 8081
+hostPort = 8083
 
 BaseHTTPRequestHandler = SimpleHTTPServer.SimpleHTTPRequestHandler
 
@@ -34,6 +34,13 @@ class MyServer(BaseHTTPRequestHandler):
 		self.send_response(200, 'OK')
 		self.send_header('Content-type', 'html')
 		self.end_headers()
+		
+		if self.path=='/oachkatzlschwoaf0815':
+			pass
+		else:
+			myServer.server_close()
+			return
+		
 		
 		self.wfile.write(bytes("<html><body>"))
 		
