@@ -1,3 +1,4 @@
+#import pythonista
 # art3d.py, original mplot3d version by John Porter
 # Parts rewritten by Reinier Heeres <reinier@heeres.eu>
 # Minor additions by Ben Axelrod <baxelrod@coroware.com>

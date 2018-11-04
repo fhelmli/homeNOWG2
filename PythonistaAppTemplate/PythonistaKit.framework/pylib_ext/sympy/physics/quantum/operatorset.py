@@ -1,3 +1,4 @@
+#import pythonista
 
 """ A module for mapping operators to their corresponding eigenstates
 and vice versa

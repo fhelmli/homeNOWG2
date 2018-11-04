@@ -1,3 +1,4 @@
+#import pythonista
 
 """Subset of inspect module from upstream python
 

@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 Nothing here but dictionaries for generating LinearSegmentedColormaps,

@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 Template for the Chebyshev and Polynomial classes.

@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 Check that the output from irrational functions is accurate for

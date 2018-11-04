@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 Module of functions that are like ufuncs in acting on arrays and optionally

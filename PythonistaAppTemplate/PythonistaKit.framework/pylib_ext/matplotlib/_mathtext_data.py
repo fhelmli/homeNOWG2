@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 font data tables for truetype and afm computer modern fonts

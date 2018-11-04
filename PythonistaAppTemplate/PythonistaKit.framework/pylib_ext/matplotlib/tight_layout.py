@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 This module provides routines to adjust subplot params so that subplots are

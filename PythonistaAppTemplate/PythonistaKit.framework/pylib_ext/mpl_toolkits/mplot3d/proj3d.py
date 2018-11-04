@@ -1,3 +1,4 @@
+#import pythonista
 # 3dproj.py
 #
 """

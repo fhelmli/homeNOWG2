@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 A replacement wrapper around the subprocess module, with a number of

@@ -1,3 +1,4 @@
+#import pythonista
 
 """Common test support for all numpy test scripts.
 

@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 Test bit-level integer and mpf operations

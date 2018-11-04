@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 Python 3 compatibility tools.

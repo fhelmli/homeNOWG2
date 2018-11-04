@@ -1,3 +1,4 @@
+#import pythonista
 from copy import copy
 
 from ..libmp.backend import xrange, print_

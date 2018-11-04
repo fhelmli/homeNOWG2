@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 Some io tools for excel -- requires xlwt

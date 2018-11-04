@@ -1,3 +1,4 @@
+#import pythonista
 from mpmath import *
 
 def test_diff():

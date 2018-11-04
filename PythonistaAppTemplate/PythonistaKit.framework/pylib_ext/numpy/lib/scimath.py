@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 Wrapper functions to more user-friendly calling of certain math functions

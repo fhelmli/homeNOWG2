@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 setup.py for installing F2PY

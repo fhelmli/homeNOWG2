@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 Collection of utilities to manipulate structured arrays.

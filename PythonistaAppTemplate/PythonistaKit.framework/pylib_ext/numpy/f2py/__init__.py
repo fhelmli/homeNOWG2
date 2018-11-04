@@ -1,3 +1,4 @@
+#import pythonista
 from __future__ import division, absolute_import, print_function
 
 __all__ = ['run_main', 'compile', 'f2py_testing']

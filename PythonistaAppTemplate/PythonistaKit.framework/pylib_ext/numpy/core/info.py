@@ -1,3 +1,4 @@
+#import pythonista
 
 """Defines a multi-dimensional array and useful procedures for Numerical computation.
 

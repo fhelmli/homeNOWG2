@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 This module defines the mpf, mpc classes, and standard functions for

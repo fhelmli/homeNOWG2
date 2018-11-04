@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 Legendre Series (:mod: `numpy.polynomial.legendre`)

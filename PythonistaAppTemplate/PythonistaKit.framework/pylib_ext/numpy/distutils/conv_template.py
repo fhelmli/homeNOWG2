@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 takes templated file .xxx.src and produces .xxx file  where .xxx is

@@ -1,3 +1,4 @@
+#import pythonista
 
 """Module containing non-deprecated functions borrowed from Numeric.
 

@@ -1,3 +1,4 @@
+#import pythonista
 
 """A module to manipulate symbolic objects with indices including tensors
 

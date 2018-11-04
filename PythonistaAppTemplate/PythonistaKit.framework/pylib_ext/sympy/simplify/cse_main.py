@@ -1,3 +1,4 @@
+#import pythonista
 
 """ Tools for doing common subexpression elimination.
 """

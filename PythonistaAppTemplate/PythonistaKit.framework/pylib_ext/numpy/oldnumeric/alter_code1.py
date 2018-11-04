@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 This module converts code written for Numeric to run with numpy

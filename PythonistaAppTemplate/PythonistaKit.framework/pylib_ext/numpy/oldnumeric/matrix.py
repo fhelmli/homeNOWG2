@@ -1,3 +1,4 @@
+#import pythonista
 
 """This module is for compatibility only.
 

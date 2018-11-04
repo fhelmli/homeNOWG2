@@ -1,3 +1,4 @@
+#import pythonista
 from sympy import (symbols, FunctionMatrix, MatrixExpr, Lambda, Matrix)
 
 

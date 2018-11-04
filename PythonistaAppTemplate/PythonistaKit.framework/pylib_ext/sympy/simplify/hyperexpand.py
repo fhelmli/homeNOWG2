@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 Expand Hypergeometric (and Meijer G) functions into named

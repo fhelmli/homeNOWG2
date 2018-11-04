@@ -1,3 +1,4 @@
+#import pythonista
 from __future__ import division, absolute_import, print_function
 
 __docformat__ = "restructuredtext en"

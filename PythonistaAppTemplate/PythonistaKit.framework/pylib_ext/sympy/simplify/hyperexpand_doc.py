@@ -1,3 +1,4 @@
+#import pythonista
 
 """ This module cooks up a docstring when imported. Its only purpose is to
     be displayed in the sphinx documentation. """

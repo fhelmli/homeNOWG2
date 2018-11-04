@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 Support code for building Python extensions on Windows.

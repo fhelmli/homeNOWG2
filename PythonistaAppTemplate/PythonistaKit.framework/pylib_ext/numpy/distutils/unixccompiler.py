@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 unixccompiler - can handle very long argument lists for ar.

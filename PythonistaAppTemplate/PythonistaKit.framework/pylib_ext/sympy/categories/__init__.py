@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 Category Theory module.

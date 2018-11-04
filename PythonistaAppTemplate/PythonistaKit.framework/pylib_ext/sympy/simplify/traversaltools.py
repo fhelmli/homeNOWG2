@@ -1,3 +1,4 @@
+#import pythonista
 
 """Tools for applying functions to specified parts of expressions. """
 

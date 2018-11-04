@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 Torture tests for asymptotics and high precision evaluation of

@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 Limited tests of the elliptic functions module.  A full suite of

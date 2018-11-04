@@ -1,3 +1,17 @@
+#import pythonista
+#import pythonista
+#import pythonista
+#import pythonista
+#import pythonista
+#import pythonista
+#import pythonista
+#import pythonista
+#import pythonista
+#import pythonista
+#import pythonista
+#import pythonista
+#import pythonista
+#import pythonista
 # -*- coding: iso-8859-1 -*-
 
 """

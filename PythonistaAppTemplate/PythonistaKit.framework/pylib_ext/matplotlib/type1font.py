@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 This module contains a class representing a Type 1 font.

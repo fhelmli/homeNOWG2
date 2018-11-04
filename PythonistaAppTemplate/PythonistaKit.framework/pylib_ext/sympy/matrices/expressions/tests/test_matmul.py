@@ -1,3 +1,4 @@
+#import pythonista
 from sympy.core import I, symbols
 from sympy.functions import adjoint, transpose
 from sympy.matrices import Identity, Inverse, Matrix, MatrixSymbol, ZeroMatrix

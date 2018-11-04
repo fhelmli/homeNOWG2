@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 This is a python interface to Adobe Font Metrics Files.  Although a

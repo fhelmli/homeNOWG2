@@ -1,3 +1,4 @@
+#import pythonista
 
 """Automatically adapted for numpy Sep 19, 2005 by convertcode.py
 

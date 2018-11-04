@@ -1,3 +1,4 @@
+#import pythonista
 
 """ Functions for converting from DOS to UNIX line endings
 

@@ -1,3 +1,4 @@
+#import pythonista
 '''
 Colorbar toolkit with two classes and a function:
 

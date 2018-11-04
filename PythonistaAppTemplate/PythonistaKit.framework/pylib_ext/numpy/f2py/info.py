@@ -1,3 +1,4 @@
+#import pythonista
 
 """Fortran to Python Interface Generator.
 

@@ -1,3 +1,4 @@
+#import pythonista
 
 """Miscellaneous functions for testing masked arrays and subclasses
 

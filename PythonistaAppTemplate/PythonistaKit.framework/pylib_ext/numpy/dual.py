@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 Aliases for functions which may be accelerated by Scipy.

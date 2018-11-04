@@ -1,3 +1,4 @@
+#import pythonista
 from sympy.core import symbols
 from sympy.utilities.pytest import raises
 

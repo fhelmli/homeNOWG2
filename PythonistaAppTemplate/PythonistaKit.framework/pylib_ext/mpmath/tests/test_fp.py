@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 Easy-to-use test-generating code:

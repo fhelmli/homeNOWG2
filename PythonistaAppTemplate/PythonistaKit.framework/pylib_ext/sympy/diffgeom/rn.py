@@ -1,3 +1,4 @@
+#import pythonista
 
 """Predefined R^n manifolds together with common coord. systems.
 

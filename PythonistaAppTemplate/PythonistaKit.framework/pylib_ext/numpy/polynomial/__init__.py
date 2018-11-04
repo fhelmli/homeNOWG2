@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 A sub-package for efficiently dealing with polynomials.

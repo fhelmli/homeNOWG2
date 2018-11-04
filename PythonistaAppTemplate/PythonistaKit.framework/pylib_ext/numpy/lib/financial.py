@@ -1,3 +1,4 @@
+#import pythonista
 
 """Some simple financial calculations
 

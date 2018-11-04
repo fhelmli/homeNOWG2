@@ -1,3 +1,4 @@
+#import pythonista
 try:
     from itertools import izip
 except ImportError:

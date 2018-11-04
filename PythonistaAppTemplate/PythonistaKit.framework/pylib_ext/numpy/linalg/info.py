@@ -1,3 +1,4 @@
+#import pythonista
 
 """\
 Core Linear Algebra Tools

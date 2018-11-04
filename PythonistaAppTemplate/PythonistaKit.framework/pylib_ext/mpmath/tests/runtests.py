@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 python runtests.py -py

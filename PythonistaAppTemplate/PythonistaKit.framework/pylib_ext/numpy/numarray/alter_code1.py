@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 This module converts code written for numarray to run with numpy

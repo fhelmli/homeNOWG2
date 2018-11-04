@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 .. note:: Deprecated in 1.3

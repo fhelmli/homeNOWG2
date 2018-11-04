@@ -1,3 +1,4 @@
+#import pythonista
 #=======================================================================
 
 """ A set of utilities for comparing results.

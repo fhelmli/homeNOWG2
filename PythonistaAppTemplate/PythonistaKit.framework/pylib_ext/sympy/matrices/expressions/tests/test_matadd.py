@@ -1,3 +1,4 @@
+#import pythonista
 from sympy.matrices.expressions import MatrixSymbol, MatAdd
 
 X = MatrixSymbol('X', 2, 2)

@@ -1,3 +1,4 @@
+#import pythonista
 
 """Sub-package containing the matrix class and related functions.
 

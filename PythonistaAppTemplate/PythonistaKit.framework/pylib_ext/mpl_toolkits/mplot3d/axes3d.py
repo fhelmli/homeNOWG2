@@ -1,3 +1,4 @@
+#import pythonista
 # axes3d.py, original mplot3d version by John Porter
 # Created: 23 Sep 2005
 # Parts fixed by Reinier Heeres <reinier@heeres.eu>

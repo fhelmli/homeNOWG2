@@ -1,3 +1,4 @@
+#import pythonista
 
 """Tools to assist importing optional external modules."""
 

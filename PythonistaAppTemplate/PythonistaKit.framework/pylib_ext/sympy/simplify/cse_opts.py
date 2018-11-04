@@ -1,3 +1,4 @@
+#import pythonista
 
 """ Optimizations of the expression tree representation for better CSE
 opportunities.

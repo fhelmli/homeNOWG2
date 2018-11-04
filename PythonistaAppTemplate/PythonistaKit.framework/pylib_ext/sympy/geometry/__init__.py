@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 A geometry module for the SymPy library. This module contains all of the

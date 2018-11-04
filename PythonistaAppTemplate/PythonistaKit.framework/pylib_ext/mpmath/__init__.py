@@ -1,3 +1,4 @@
+#import pythonista
 __version__ = '0.18'
 
 from .usertools import monitor, timing

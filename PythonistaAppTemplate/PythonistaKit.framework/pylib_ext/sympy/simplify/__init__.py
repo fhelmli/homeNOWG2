@@ -1,3 +1,4 @@
+#import pythonista
 
 """The module helps converting SymPy expressions into shorter forms of them.
 

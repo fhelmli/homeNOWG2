@@ -1,3 +1,4 @@
+#import pythonista
 
 """Delaunay triangulation and interpolation tools.
 

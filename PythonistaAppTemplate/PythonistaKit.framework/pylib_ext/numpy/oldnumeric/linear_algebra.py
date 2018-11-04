@@ -1,3 +1,4 @@
+#import pythonista
 
 """Backward compatible with LinearAlgebra from Numeric
 

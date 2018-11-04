@@ -1,3 +1,4 @@
+#import pythonista
 from __future__ import print_function, division
 
 from .rv import (probability, expectation, density, where, given, pspace, cdf,

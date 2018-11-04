@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 Objects for dealing with Hermite_e series.

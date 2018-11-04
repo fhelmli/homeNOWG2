@@ -1,3 +1,4 @@
+#import pythonista
 
 """ Basic functions for manipulating 2d arrays
 

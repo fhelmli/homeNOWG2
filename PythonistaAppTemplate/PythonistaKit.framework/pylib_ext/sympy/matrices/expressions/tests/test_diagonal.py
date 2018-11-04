@@ -1,3 +1,4 @@
+#import pythonista
 from sympy.matrices.expressions import MatrixSymbol
 from sympy.matrices.expressions.diagonal import DiagonalMatrix, DiagonalOf
 from sympy import Symbol, ask, Q
