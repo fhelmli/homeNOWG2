@@ -1,3 +1,4 @@
+#import pythonista
 
 """Computational algebraic field theory. """
 

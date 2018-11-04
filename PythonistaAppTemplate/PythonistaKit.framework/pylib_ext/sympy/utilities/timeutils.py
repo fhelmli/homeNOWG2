@@ -1,3 +1,4 @@
+#import pythonista
 
 """Simple tools for timing functions' execution, when IPython is not available. """
 

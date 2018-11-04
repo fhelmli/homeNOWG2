@@ -1,3 +1,4 @@
+#import pythonista
 
 """ Functions to support rewriting of SymPy expressions """
 

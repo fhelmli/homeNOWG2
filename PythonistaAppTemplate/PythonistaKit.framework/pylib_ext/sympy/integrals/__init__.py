@@ -1,3 +1,4 @@
+#import pythonista
 
 """Integration functions that integrates a sympy expression.
 

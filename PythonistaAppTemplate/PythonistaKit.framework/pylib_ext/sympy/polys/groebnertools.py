@@ -1,3 +1,4 @@
+#import pythonista
 
 """Groebner bases algorithms. """
 

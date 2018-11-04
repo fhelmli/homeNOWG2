@@ -1,3 +1,4 @@
+#import pythonista
 # sympy/galgebra/precedence.py
 
 """

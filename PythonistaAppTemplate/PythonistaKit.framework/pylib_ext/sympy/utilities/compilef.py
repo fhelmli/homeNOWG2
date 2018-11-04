@@ -1,3 +1,4 @@
+#import pythonista
 # needs access to libtcc and math.h
 # TODO: *get tcc errors (currently something like 'Unknown error 3217941984',
 #                        this makes debugging painful)

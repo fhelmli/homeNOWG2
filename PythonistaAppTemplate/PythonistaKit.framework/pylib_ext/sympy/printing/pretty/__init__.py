@@ -1,3 +1,4 @@
+#import pythonista
 
 """ASCII-ART 2D pretty-printer"""
 

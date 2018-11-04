@@ -1,3 +1,4 @@
+#import pythonista
 from sympy.strategies.branch.tools import canon
 from sympy import Basic
 

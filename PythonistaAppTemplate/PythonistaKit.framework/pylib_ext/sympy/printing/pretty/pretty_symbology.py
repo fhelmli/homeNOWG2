@@ -1,3 +1,4 @@
+#import pythonista
 
 """Symbolic primitives + unicode/ASCII abstraction for pretty.py"""
 

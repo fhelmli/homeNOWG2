@@ -1,3 +1,4 @@
+#import pythonista
 
 """py.test hacks to support XFAIL/XPASS"""
 

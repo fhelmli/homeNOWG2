@@ -1,3 +1,4 @@
+#import pythonista
 
 """Utility functions for classifying and solving
 ordinary and partial differential equations.

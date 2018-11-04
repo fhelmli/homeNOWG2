@@ -1,3 +1,4 @@
+#import pythonista
 
 """Functions for generating interesting polynomials, e.g. for benchmarking. """
 

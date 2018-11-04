@@ -1,3 +1,4 @@
+#import pythonista
 
 """ Caching facility for SymPy """
 from __future__ import print_function, division

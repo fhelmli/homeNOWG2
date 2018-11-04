@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 Number theory module (primes, etc)

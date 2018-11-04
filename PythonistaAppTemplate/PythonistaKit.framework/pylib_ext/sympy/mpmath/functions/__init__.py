@@ -1,3 +1,4 @@
+#import pythonista
 from . import functions
 # Hack to update methods
 from . import factorials

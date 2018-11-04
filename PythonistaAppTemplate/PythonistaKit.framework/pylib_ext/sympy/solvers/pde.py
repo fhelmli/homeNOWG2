@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 This module contains pdsolve() and different helper functions that it

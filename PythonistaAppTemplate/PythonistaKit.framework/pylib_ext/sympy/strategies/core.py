@@ -1,3 +1,4 @@
+#import pythonista
 
 """ Generic SymPy-Independent Strategies """
 from __future__ import print_function, division

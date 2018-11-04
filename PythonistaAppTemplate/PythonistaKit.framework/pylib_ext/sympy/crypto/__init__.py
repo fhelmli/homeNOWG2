@@ -1,3 +1,4 @@
+#import pythonista
 from sympy.crypto.crypto import (alphabet_of_cipher, cycle_list,
       encipher_shift, encipher_affine, encipher_substitution,
       encipher_vigenere, decipher_vigenere,

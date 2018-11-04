@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 pkgdata is a simple, extensible way for a package to acquire data file

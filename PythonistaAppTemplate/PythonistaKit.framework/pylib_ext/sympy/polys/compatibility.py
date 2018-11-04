@@ -1,3 +1,4 @@
+#import pythonista
 
 """Compatibility interface between dense and sparse polys. """
 

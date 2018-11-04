@@ -1,3 +1,4 @@
+#import pythonista
 
 """For reading in DIMACS file format
 

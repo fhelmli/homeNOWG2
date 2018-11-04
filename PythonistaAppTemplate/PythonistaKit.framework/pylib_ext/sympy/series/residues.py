@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 This module implements the Residue function and related tools for working

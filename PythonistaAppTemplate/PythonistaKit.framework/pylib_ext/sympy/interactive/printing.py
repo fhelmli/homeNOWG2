@@ -1,3 +1,4 @@
+#import pythonista
 
 """Tools for setting up printing in interactive sessions. """
 

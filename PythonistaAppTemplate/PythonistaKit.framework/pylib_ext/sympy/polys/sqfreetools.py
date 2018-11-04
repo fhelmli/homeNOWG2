@@ -1,3 +1,4 @@
+#import pythonista
 
 """Square-free decomposition algorithms and related tools. """
 

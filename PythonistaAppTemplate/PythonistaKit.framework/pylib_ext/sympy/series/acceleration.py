@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 Convergence acceleration / extrapolation methods for series and

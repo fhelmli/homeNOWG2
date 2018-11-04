@@ -1,3 +1,4 @@
+#import pythonista
 
 """Euclidean algorithms, GCDs, LCMs and polynomial remainder sequences. """
 

@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 This module provides convenient functions to transform sympy expressions to

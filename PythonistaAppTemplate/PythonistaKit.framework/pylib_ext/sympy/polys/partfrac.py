@@ -1,3 +1,4 @@
+#import pythonista
 
 """Algorithms for partial fraction decomposition of rational functions. """
 

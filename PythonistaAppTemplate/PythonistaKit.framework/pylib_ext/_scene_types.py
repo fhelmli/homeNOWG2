@@ -1,3 +1,4 @@
+#import pythonista
 import sys
 from textwrap import dedent
 from keyword import iskeyword

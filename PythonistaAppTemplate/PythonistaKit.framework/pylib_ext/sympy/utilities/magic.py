@@ -1,3 +1,4 @@
+#import pythonista
 
 """Functions that involve magic. """
 

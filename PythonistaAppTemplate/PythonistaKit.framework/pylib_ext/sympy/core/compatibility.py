@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 Reimplementations of constructs introduced in later versions of Python than

@@ -1,3 +1,4 @@
+#import pythonista
 
 """ Unification in SymPy
 

@@ -1,3 +1,4 @@
+#import pythonista
 from ..libmp.backend import xrange
 from .functions import defun, defun_wrapped, defun_static
 

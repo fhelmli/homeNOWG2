@@ -1,3 +1,4 @@
+#import pythonista
 
 """Polynomial factorization routines in characteristic zero. """
 

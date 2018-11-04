@@ -1,3 +1,4 @@
+#import pythonista
 
 """ SymPy interface to Unification engine
 

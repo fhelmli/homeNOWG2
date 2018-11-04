@@ -1,3 +1,4 @@
+#import pythonista
 
 """Tools for manipulation of rational expressions. """
 

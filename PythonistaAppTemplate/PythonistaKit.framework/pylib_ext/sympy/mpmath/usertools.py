@@ -1,3 +1,4 @@
+#import pythonista
 
 def monitor(f, input='print', output='print'):
     """

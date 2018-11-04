@@ -1,3 +1,4 @@
+#import pythonista
 
 """ Rewrite Rules
 

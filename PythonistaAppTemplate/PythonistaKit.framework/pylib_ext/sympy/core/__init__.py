@@ -1,3 +1,4 @@
+#import pythonista
 
 """Core module. Provides the basic operations needed in sympy.
 """

@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 A module for geometric algebra

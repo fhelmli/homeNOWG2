@@ -1,3 +1,4 @@
+#import pythonista
 
 """ Generic Rules for SymPy
 

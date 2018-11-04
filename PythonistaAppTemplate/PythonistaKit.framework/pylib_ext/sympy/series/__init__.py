@@ -1,3 +1,4 @@
+#import pythonista
 
 """A module that handles series: find a limit, order the series etc.
 """

@@ -1,3 +1,4 @@
+#import pythonista
 
 """Polynomial manipulation algorithms and algebraic objects. """
 

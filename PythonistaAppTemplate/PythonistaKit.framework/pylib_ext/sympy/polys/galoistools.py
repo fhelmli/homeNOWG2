@@ -1,3 +1,4 @@
+#import pythonista
 
 """Dense univariate polynomials with coefficients in Galois fields. """
 

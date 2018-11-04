@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 This module adds several functions for interactive source code inspection.

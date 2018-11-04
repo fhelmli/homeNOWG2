@@ -1,3 +1,4 @@
+#import pythonista
 from .functions import defun, defun_wrapped
 
 @defun

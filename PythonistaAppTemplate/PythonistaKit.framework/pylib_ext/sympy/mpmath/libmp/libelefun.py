@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 This module implements computation of elementary transcendental

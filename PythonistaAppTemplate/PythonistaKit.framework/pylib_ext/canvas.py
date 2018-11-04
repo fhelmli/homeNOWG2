@@ -1,3 +1,4 @@
+#import pythonista
 from _canvas import *
 import _canvas
 

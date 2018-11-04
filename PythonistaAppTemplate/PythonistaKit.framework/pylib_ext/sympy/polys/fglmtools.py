@@ -1,3 +1,4 @@
+#import pythonista
 
 """Implementation of matrix FGLM Groebner basis conversion algorithm. """
 

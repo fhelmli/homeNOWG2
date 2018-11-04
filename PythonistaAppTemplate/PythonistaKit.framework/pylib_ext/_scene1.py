@@ -1,3 +1,4 @@
+#import pythonista
 import _scene
 from _scene_types import *
 import math

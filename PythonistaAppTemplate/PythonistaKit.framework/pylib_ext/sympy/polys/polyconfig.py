@@ -1,3 +1,4 @@
+#import pythonista
 
 """Configuration utilities for polynomial manipulation algorithms. """
 

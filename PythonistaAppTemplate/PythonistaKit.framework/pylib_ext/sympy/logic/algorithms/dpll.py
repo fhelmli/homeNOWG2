@@ -1,3 +1,4 @@
+#import pythonista
 
 """Implementation of DPLL algorithm
 

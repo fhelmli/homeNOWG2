@@ -1,3 +1,4 @@
+#import pythonista
 from .plot import plot_backends
 from .plot_implicit import plot_implicit
 from .proxy_pyglet import Plot

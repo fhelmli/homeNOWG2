@@ -1,3 +1,4 @@
+#import pythonista
 
 """Heuristic polynomial GCD algorithm (HEUGCD). """
 

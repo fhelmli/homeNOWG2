@@ -1,3 +1,4 @@
+#import pythonista
 
 """
 Algorithms for solving Parametric Risch Differential Equations.

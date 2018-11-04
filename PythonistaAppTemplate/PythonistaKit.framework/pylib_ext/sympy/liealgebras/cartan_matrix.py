@@ -1,3 +1,4 @@
+#import pythonista
 from .cartan_type import CartanType
 
 def CartanMatrix(ct):

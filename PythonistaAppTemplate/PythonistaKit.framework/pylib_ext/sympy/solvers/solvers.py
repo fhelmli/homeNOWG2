@@ -1,3 +1,4 @@
+#import pythonista
 ﻿"""
 This module contain solvers for all kinds of equations:
 

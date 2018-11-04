@@ -1,3 +1,4 @@
+#import pythonista
 
 """Plotting module that can plot 2D and 3D functions
 """

@@ -1,3 +1,4 @@
+#import pythonista
 # sympy/galgebra/debug.py
 
 from __future__ import print_function

@@ -1,3 +1,4 @@
+#import pythonista
 
 """High-level polynomials manipulation functions. """
 

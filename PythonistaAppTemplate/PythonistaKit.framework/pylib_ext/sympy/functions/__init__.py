@@ -1,3 +1,4 @@
+#import pythonista
 
 """A functions module, includes all the standard functions.
 

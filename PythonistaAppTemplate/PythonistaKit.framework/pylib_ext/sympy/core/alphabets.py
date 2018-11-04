@@ -1,3 +1,4 @@
+#import pythonista
 from __future__ import print_function, division
 
 greeks = ('alpha', 'beta', 'gamma', 'delta', 'epsilon', 'zeta',

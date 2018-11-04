@@ -1,3 +1,4 @@
+#import pythonista
 # sympy/galgebra/stringarrays.py
 
 """
