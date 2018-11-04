@@ -1,7 +1,16 @@
 #!/usr/bin/env python2
 
+import imp
+try:
+    imp.find_module('ui')
+    found = True
+except ImportError:
+    found = False
+
 ################################
-inAnApp = True
+inAnApp = False
+if found:
+    inAnApp = True
 ################################
 
 if inAnApp:
