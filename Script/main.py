@@ -56,7 +56,7 @@ class MyServer(BaseHTTPRequestHandler):
 		for x in range(numTetrisGames):
 			self.wfile.write(bytes(
 				"""
-				<h1><p>TEST FOR CONTINUOUS INTEGRATION!</p>This WebView content was written in Python! Additional data sent from Python code: """
+				<h1><p>TEST FOR CONTINUOUS INTEGRATION 2!</p>This WebView content was written in Python! Additional data sent from Python code: """
 					 + str(x) + """<p><p>Tetris game in SVG:</h1>
 			
 				<svg width="220px" height="120px">
