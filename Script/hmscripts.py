@@ -7,8 +7,7 @@ def executeHMScript(url, script):
     
     username = 'tberk'
     password = 'tom1977'
-    url2 = "https://home.peissl.at/rega/Test.exe?" + hmScript
-    url = "https://home.peissl.at/rega/Test.exe"
+    url = "http://10.0.0.2:8181/Test.exe"
 
     #url = "http://" + url + ":8181/Test.exe?" + hmScript
     

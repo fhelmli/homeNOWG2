@@ -37,7 +37,7 @@ hostName = ""
 hostPort = 8083
 
 # TEST! show all results of all "get all infos" HMScripts
-allCCUInfoInOne = testHMScripts()
+allCCUInfoInOne = "" #testHMScripts()
 
 
 BaseHTTPRequestHandler = SimpleHTTPServer.SimpleHTTPRequestHandler
@@ -55,7 +55,7 @@ class MyServer(BaseHTTPRequestHandler):
 		else:
 			myServer.server_close()
 			return
-		self.wfile.write(bytes("<html><body>")) # + allCCUInfoInOne
+		self.wfile.write(bytes("<html><body>" + allCCUInfoInOne)) # + allCCUInfoInOne
 		for x in range(numTetrisGames):
 			self.wfile.write(bytes(
 				"""
