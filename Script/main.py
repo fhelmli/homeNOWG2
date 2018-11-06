@@ -22,6 +22,8 @@ import SimpleHTTPServer
 import BaseHTTPServer
 import time
 
+import hmscripts
+
 
 #######################################################
 # our new bundle ID for iOS App: at.homenow.homenow2
@@ -51,7 +53,10 @@ class MyServer(BaseHTTPRequestHandler):
 			return
 		
 		
-		self.wfile.write(bytes("<html><body>"))
+        allCCUInfoInOne = testHMScripts()
+
+        
+        self.wfile.write(bytes("<html><body>" + allCCUInfoInOne))
 		
 		for x in range(numTetrisGames):
 			self.wfile.write(bytes(
