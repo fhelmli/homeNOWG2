@@ -48,4 +48,4 @@ def test():
 	mysettings =settings()
 	mysettings.print()
 	
-test()
+#test()
