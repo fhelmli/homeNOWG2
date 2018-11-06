@@ -55,13 +55,13 @@ def addWindow(additionalContents, nextWindowId = None):
 	if nextWindowId==None:
 		nextWindowId = 0
 
-	additionalContents = additionalContents + '<div id="window' + str(nextWindowId) + '" style="width:500px;height:100px;border:1px solid #000;">This is a window!</div>'
+	additionalContents = additionalContents + '<div id="window' + str(nextWindowId) + '" style="width:500px;height:100px;border:1px solid #000;">This is a window, number ' + str(nextWindowId) + '!</div>'
 	nextWindowId = nextWindowId + 1
 
-	return additionalContents
+	return additionalContents, nextWindowId
 
 def insertTextInWindow(index, text):
-	return "setContentsOfId(" + text + ");"
+	return """/*eval*/document.getElementById('window""" + str(index) + """').innerHTML = 'Window contents of window """ + str(index) + """ changed to """ + text + """!';"""
 
 
 
@@ -91,7 +91,7 @@ class MyServer(BaseHTTPRequestHandler):
 		self.send_header('Content-type', 'html')
 		self.end_headers()
 		
-		if self.path=='/oachkatzlschwoaf0815':
+		if self.path=='/oachkatzlschwoaf0815' or self.path=='/oachkatzlschwoaf0815_getWindowContent':
 			pass
 		else:
 			myServer.server_close()
@@ -99,33 +99,44 @@ class MyServer(BaseHTTPRequestHandler):
 		
 		
 		# TEST
-		additionalContents = ""
-		additionalContents = addWindow(additionalContents)
-		additionalContents = addWindow(additionalContents)
-		additionalContents = addWindow(additionalContents)
-		additionalContents = addWindow(additionalContents)
-		additionalContents = addWindow(additionalContents)
+		if self.path=='/oachkatzlschwoaf0815':
+			additionalContents = ""
+			winId = None
+			additionalContents, winId = addWindow(additionalContents, winId)
+			additionalContents, winId = addWindow(additionalContents, winId)
+			additionalContents, winId = addWindow(additionalContents, winId)
+			additionalContents, winId = addWindow(additionalContents, winId)
+			additionalContents, winId = addWindow(additionalContents, winId)
+			
+			windows = "<h1>Windows test:</h1><p>" + additionalContents
 		
-		windows = "<h1>Windows test:</h1><p>" + additionalContents
-	
 
-		self.wfile.write(bytes("<html><body>" + windows + allCCUInfoInOne)) # + allCCUInfoInOne
-		for x in range(numTetrisGames):
-			self.wfile.write(bytes(
-								   """
-									   <h1>This WebView content was written in Python! Additional data sent from Python code: """ + str(x))) # % str(x))) # self.path, "utf-8"))
-		
-		for i in range(1000):
-			self.wfile.write(bytes("""
-				<h1>All content was sent to the WebView from Python code. Additional data: %s<p><p>Simple SVG file:</h1>
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 65">
-				<path fill="#1A374D" d="M42 27v-20c0-3.7-3.3-7-7-7s-7 3.3-7 7v21l12 15-7 15.7c14.5 13.9 35 2.8 35-13.7 0-13.3-13.4-21.8-26-18zm6 25c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7z"/>
-				<path d="M14 27v-20c0-3.7-3.3-7-7-7s-7 3.3-7 7v41c0 8.2 9.2 17 20 17s20-9.2 20-20c0-13.3-13.4-21.8-26-18zm6 25c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7z"/>
-				</svg>
-				
-				
-				""" % str(i))) # self.path, "utf-8"))
+			self.wfile.write(bytes("<html><body>" + windows)) # + allCCUInfoInOne
+			for x in range(numTetrisGames):
+				self.wfile.write(bytes(
+									   """
+										   <h1>This WebView content was written in Python! Additional data sent from Python code: """ + str(x))) # % str(x))) # self.path, "utf-8"))
+			
+			for i in range(1000):
+				self.wfile.write(bytes("""
+					<h1>All content was sent to the WebView from Python code. Additional data: %s<p><p>Simple SVG file:</h1>
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 65">
+					<path fill="#1A374D" d="M42 27v-20c0-3.7-3.3-7-7-7s-7 3.3-7 7v21l12 15-7 15.7c14.5 13.9 35 2.8 35-13.7 0-13.3-13.4-21.8-26-18zm6 25c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7z"/>
+					<path d="M14 27v-20c0-3.7-3.3-7-7-7s-7 3.3-7 7v41c0 8.2 9.2 17 20 17s20-9.2 20-20c0-13.3-13.4-21.8-26-18zm6 25c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7z"/>
+					</svg>
+					
+					
+					""" % str(i))) # self.path, "utf-8"))
+		else:
+			contentsInWindows = insertTextInWindow(0, "COOL0")
+			contentsInWindows += insertTextInWindow(1, "COOL1")
+			contentsInWindows += insertTextInWindow(2, "COOL2")
+			contentsInWindows += insertTextInWindow(3, "COOL3")
+			contentsInWindows += insertTextInWindow(4, "COOL4")
+			self.wfile.write(bytes(contentsInWindows))
 
+
+				
 		#time.sleep(2.0)
 		
 		#if inAnApp:

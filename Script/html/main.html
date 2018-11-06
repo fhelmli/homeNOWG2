@@ -10,7 +10,14 @@
 		xmlhttp.onreadystatechange = function() {
 			if (xmlhttp.readyState == XMLHttpRequest.DONE) {   // XMLHttpRequest.DONE == 4
 				if (xmlhttp.status == 200) {
-					document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
+					if (xmlhttp.responseText.indexOf("/*eval*/")==0)
+						eval(xmlhttp.responseText);
+					else
+					{
+						document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
+						xmlhttp.open("GET", "http://localhost:8083/oachkatzlschwoaf0815_getWindowContent", true);
+						xmlhttp.send();
+					}
 				}
 				else if (xmlhttp.status == 400) {
 					alert('There was an error 400');
