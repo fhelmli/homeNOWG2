@@ -1,5 +1,7 @@
 import hmdevices
 import hmdevice
+import settings
+import hminterface
 
 class hmCCU:
 	devices=[]
@@ -12,6 +14,7 @@ class hmCCU:
 	def __init__(self,interface=None):
 		print('hmccu constructor: ')
 		self.interface=interface
+	
 	def updateConfig():
 		print('hmccu update config: ')
 		if self.interface==None:
@@ -28,6 +31,7 @@ class hmCCU:
 		for element in self.devices.devices:
 			element.print()
 			element.update(self.interface)
+	
 	def print(self):
 		print('hmccu  print: ')
 		self.devices.print()
@@ -40,11 +44,14 @@ class hmCCU:
 
 def test():
 	print('hmccu  test: ')
-	myhmccu=hmCCU()
+	s=settings.settings(1)
+	i=hminterface.hmInterface(s.url())
+	myhmccu=hmCCU(i)
 	mydevices=hmdevices.hmDevices()
-	mydev=hmdevice.hmDevice()
+	mydev=hmdevice.hmDevice(1)
 	mydevices.add(mydev)
 	myhmccu.devices=mydevices
 	myhmccu.print()
+	myhmccu.updateValues()
 	
 test()

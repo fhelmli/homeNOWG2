@@ -27,8 +27,14 @@ class hmDevice:
 	
 	id=0
 	
+	#device type: welcher aktor typ ist es
+	deviceType=0
+	
 	#the content
-	value=0
+	actualValue=0
+	lastValue=0
+	tendence=0
+	
 	#default 0 nix
 	#defauöt 1 gerät in franz graz
 	#default 2 gerät in franz lamperstätten
@@ -39,26 +45,39 @@ class hmDevice:
 		if default==1:
 			self.serial='KEQ0909042'
 			self.port='4'
-			self.key='SET_TEMPERATURE'
+			self.key='ACTUAL_TEMPERATURE'
 		if default==2:
 			self.serial='LEQ0782212'
 			self.port='4'
-			self.key='SET_TEMPERATURE'
-	
-	#type 0 update by serial
-	#type 1 update by id
-	def update(self,interface,type=0):
+			self.key='ACTUAL_TEMPERATURE'
+			
+	def updateIdFromSerial(self,interface):
 		if interface==None:
 			print('interface: '+str(interface))
 			raise Exception('hmdevice: no interface defined!')
-		if type==0: #with serial
-			self.value= interface.update(self.serial,self.port,self.key)
-		if type==1: #with id
-			self.value=interface.updateId(self.id)
+		self.id= interface.update(self.serial,self.port,self.key,'ID')
+	
+	#type 0 update by serial
+	#type 1 update by id
+	def update(self,interface,updateType=0):
+		if interface==None:
+			print('interface: '+str(interface))
+			raise Exception('hmdevice: no interface defined!')
+		if updateType==0: #with serial
+			self.actualValue= interface.update(self.serial,self.port,self.key)
+			self.lastValue= interface.update(self.serial,self.port,self.key,'LastValue')
+		if updateType==1: #with id
+			self.actualValue=interface.updateId(self.id)
+			self.lastValue=interface.updateId(self.id,'LastValue')
+		
+		if type(self.actualValue)==float or type(self.actualValue)==int:
+			self.tendence=self.actualValue-self.lastValue
+		else:
+			self.tendence=0
 	
 	def print(self):
-		print('hmdevice print name: '+self.name+' serial: ' +self.serial+':'+self.port+':'+self.key+ ' room: '+str(self.room)+' section: '+str(self.section))
-		print('  value: '+str(self.value))
+		print('hmdevice print name: '+self.name+' serial: ' +self.serial+':'+self.port+':'+self.key+ ' room: '+str(self.room)+' section: '+str(self.section) + ' id: '+str(self.id))
+		print('  value: '+str(self.actualValue)+' before: '+str(self.lastValue) + ' t: '+str(self.tendence))
 
 
 
@@ -66,15 +85,14 @@ class hmDevice:
 
 def test():
 	print('hmdevice test: ')
-	s=settings.settings(2)
-	interface = hminterface.hmInterface(s.url())
+	s=settings.settings(1)
+	interface = hminterface.hmInterface(s.url(),1)
 	
-	mydev=hmDevice(2)
-	#mydev.serial='KEQ0909042'
-	#mydev.port='4'
-	#mydev.key='SET_TEMPERATURE'
+	mydev=hmDevice(1)
 	mydev.print()
-	mydev.update(interface,1)
+	mydev.update(interface,0)
+	mydev.print()
+	mydev.updateIdFromSerial(interface)
 	mydev.print()
 	
-test()
+#test()
