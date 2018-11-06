@@ -53,7 +53,7 @@ numTetrisGames = 1
 
 
 hostName = ""
-hostPort = 80  #8083
+hostPort = 8083
 
 # TEST! show all results of all "get all infos" HMScripts
 allCCUInfoInOne = "" #testHMScripts()
