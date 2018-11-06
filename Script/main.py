@@ -22,7 +22,7 @@ import SimpleHTTPServer
 import BaseHTTPServer
 import time
 
-import hmscripts
+from hmscripts import testHMScripts
 
 
 #######################################################
