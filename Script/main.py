@@ -55,7 +55,7 @@ class MyServer(BaseHTTPRequestHandler):
 		else:
 			myServer.server_close()
 			return
-		self.wfile.write(bytes("<html><body>" + allCCUInfoInOne))
+		self.wfile.write(bytes("<html><body>")) # + allCCUInfoInOne
 		for x in range(numTetrisGames):
 			self.wfile.write(bytes(
 				"""
