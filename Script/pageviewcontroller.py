@@ -44,6 +44,24 @@ class PageViewController:
 """
 
 
+nextWindowId = 0
+additionalContents = ""
+
+
+def addWindow(additionalContents, nextWindowId = None):
+	if additionalContents==None:
+		additionalContents = ""
+
+	if nextWindowId==None:
+		nextWindowId = 0
+
+	additionalContents = additionalContents + '<div id="window' + str(nextWindowId) + '" style="width:500px;height:100px;border:1px solid #000;">This is a window!</div>'
+	nextWindowId = nextWindowId + 1
+
+	return additionalContents
+
+def insertTextInWindow(index, text):
+	return "setContentsOfId(" + text + ");"
 
 
 
@@ -78,11 +96,24 @@ class MyServer(BaseHTTPRequestHandler):
 		else:
 			myServer.server_close()
 			return
-		self.wfile.write(bytes("<html><body>" + allCCUInfoInOne)) # + allCCUInfoInOne
+		
+		
+		# TEST
+		additionalContents = ""
+		additionalContents = addWindow(additionalContents)
+		additionalContents = addWindow(additionalContents)
+		additionalContents = addWindow(additionalContents)
+		additionalContents = addWindow(additionalContents)
+		additionalContents = addWindow(additionalContents)
+		
+		windows = "<h1>Windows test:</h1><p>" + additionalContents
+	
+
+		self.wfile.write(bytes("<html><body>" + windows + allCCUInfoInOne)) # + allCCUInfoInOne
 		for x in range(numTetrisGames):
 			self.wfile.write(bytes(
 								   """
-									   <h1><p>NEW TEST FOR CONTINUOUS INTEGRATION!</p>This WebView content was written in Python! Additional data sent from Python code: """ + str(x))) # % str(x))) # self.path, "utf-8"))
+									   <h1>This WebView content was written in Python! Additional data sent from Python code: """ + str(x))) # % str(x))) # self.path, "utf-8"))
 		
 		for i in range(1000):
 			self.wfile.write(bytes("""
