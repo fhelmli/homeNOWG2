@@ -11,11 +11,15 @@
 			if (xmlhttp.readyState == XMLHttpRequest.DONE) {   // XMLHttpRequest.DONE == 4
 				if (xmlhttp.status == 200) {
 					if (xmlhttp.responseText.indexOf("/*eval*/")==0)
+					{
+						alert(xmlhttp.responseText);
 						eval(xmlhttp.responseText);
+						
+					}
 					else
 					{
 						document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
-						xmlhttp.open("GET", "http://localhost:8083/oachkatzlschwoaf0815_getWindowContent", true);
+						xmlhttp.open("GET", "http://localhost:8083/oachkatzlschwoaf0815_getWindowContent", true); // this means get SVG or whatever you want to put into a page, and evaluate the code
 						xmlhttp.send();
 					}
 				}
@@ -28,7 +32,7 @@
 			}
 		};
 		
-		xmlhttp.open("GET", "http://localhost:8083/oachkatzlschwoaf0815", true);
+		xmlhttp.open("GET", "http://localhost:8083/oachkatzlschwoaf0815", true); // oachkatzlschwoaf0815 means get current "empty" page (just menu and title bar, no contents)
 		xmlhttp.send();
 	}
 
