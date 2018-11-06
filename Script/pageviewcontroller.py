@@ -101,8 +101,8 @@ class MyServer(BaseHTTPRequestHandler):
 		#	myServer.server_close()
 
 
-	#def log_message(self, format, *args):
-		#pass
+	def log_message(self, format, *args):
+		pass
 
 
 myServer = BaseHTTPServer.HTTPServer((hostName, hostPort), MyServer)
