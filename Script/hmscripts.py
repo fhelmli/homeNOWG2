@@ -493,6 +493,28 @@ def testParseResults():
 
 	# genauso kriegt man mit diesen wenigen Zeilen Code alle Favoriten, Kanäle, Geräte, und man weiß welche Kanäle in welchen Geräten sind. -> alles bereit zum ausfüllen der Seiten, parsen mit den IDs der Datenpunkte, die auch hier drinstehen.
 
+
+	# Beispiel für einen Kanal
+	channelExample = """
+		{"Name":"Heizung Wohnzimmer","TypeName":"CHANNEL","HssType":"CLIMATECONTROL_RT_TRANSCEIVER","ChnDirection":0,"ChannelType":17,"Address":"INT0000005:1","ChnLabel":"CLIMATECONTROL_RT_TRANSCEIVER","Parent":4698,"DPs":{"CONTROL_MODE":4716,"ACTUAL_HUMIDITY":4711,"BOOST_MODE":4714,"AUTO_MODE":4713,"SET_TEMPERATURE":4729,"ACTUAL_TEMPERATURE":4712,"MANU_MODE":4718,"COMFORT_MODE":4715,"LOWERING_MODE":4717,"PARTY_TEMPERATURE":4728,"PARTY_START_TIME":4722,"PARTY_START_DAY":4720,"PARTY_START_MONTH":4721,"PARTY_START_YEAR":4723,"PARTY_STOP_TIME":4726,"PARTY_STOP_DAY":4724,"PARTY_STOP_MONTH":4725,"PARTY_STOP_YEAR":4727,"PARTY_MODE_SUBMIT":4719}
+		}
+		"""
+
+	oneChannel = json.loads(channelExample)
+	
+	print "Kanal " + oneChannel["Name"] + " hat folgende Daten:\n"
+	for id, channelData in oneChannel.iteritems():
+		print id + ": " + str(channelData)
+
+
+	print "\n\nThis channel belongs to the device with the ID: " + str(oneChannel["Parent"]) + "\n"
+
+	print "\n\nDatapoints and their IDs: \n"
+	for id, datapoint in oneChannel["DPs"].iteritems():
+		print "\n" + str(id) + ": " + str(datapoint)
+
+
+
 #cool = testHMScripts()
 
 testParseResults()
