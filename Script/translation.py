@@ -1,5 +1,7 @@
 # -*- coding: utf-8 
 
+import config
+
 #
 # TODO: Add many more words needed for the App! Now I added only some words for the first visualisation
 #
@@ -33,9 +35,18 @@ dictionaryDE = {
 
 }
 
+def setGlobalLanguage(language):
+	config.g_language = language
+	
 def tr(word, language=None):
-	if language==None or language=="de":
-		return dictionaryDE[word]
+	if language==None:
+		if config.g_language=="de":
+			return dictionaryDE[word]
+		else:
+			return word
 	else:
-		return word
+		if language=="de": 		
+			return dictionaryDE[word]
+		else:
+			return word
 	
