@@ -464,11 +464,12 @@ def testParseResults():
 	print "\n\n\n"
 
 	# und dann der einfache Zugriff auf alle Räume und ihre IDs und Kanäle (Python 2.x, in Python 3.x wäre es nur items(), dann geht es aber nicht als iOS-App.):
-	for id, rooms in pythonDataStructureRooms.iteritems():
-		print "Room " + rooms["Name"] + " has the ID " + str(id) + "\nChannels in this Room:\n"
+	# = iterieren durch keys und values (hier id, room) des dictionaries
+	for id, room in pythonDataStructureRooms.iteritems():
+		print "Room " + room["Name"] + " has the ID " + str(id) + "\nChannels in this Room:\n"
 
 		channelsString = ""
-		for channel in rooms["Channels"]:
+		for channel in room["Channels"]:
 			channelsString += str(channel) + ", "
 		print channelsString + "\n\n"
 
@@ -483,11 +484,12 @@ def testParseResults():
 		
 	
 	# und dann der einfache Zugriff auf alle Gewerke und ihre IDs und Kanäle (Python 2.x):
-	for id, functions in pythonDataStructureFunctions.iteritems():
-		print "Function category " + functions["Name"] + " has the ID " + str(id) + "\nChannels in this Function category:\n"
+	# = iterieren durch keys und values (hier id, room) des dictionaries
+	for id, function in pythonDataStructureFunctions.iteritems():
+		print "Function category " + function["Name"] + " has the ID " + str(id) + "\nChannels in this Function category:\n"
 
 		channelsString = ""
-		for channel in functions["Channels"]:
+		for channel in function["Channels"]:
 			channelsString += str(channel) + ", "
 		print channelsString + "\n\n"
 
@@ -502,7 +504,7 @@ def testParseResults():
 
 	oneChannel = json.loads(channelExample)
 	
-	print "Kanal " + oneChannel["Name"] + " hat folgende Daten:\n"
+	print "\n\nKanal " + oneChannel["Name"] + " hat folgende Daten:\n"
 	for id, channelData in oneChannel.iteritems():
 		print id + ": " + str(channelData)
 
