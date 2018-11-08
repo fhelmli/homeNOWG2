@@ -510,8 +510,8 @@ def testParseResults():
 	print "\n\nThis channel belongs to the device with the ID: " + str(oneChannel["Parent"]) + "\n"
 
 	print "\n\nDatapoints and their IDs: \n"
-	for id, datapoint in oneChannel["DPs"].iteritems():
-		print "\n" + str(id) + ": " + str(datapoint)
+	for datapoint, id in oneChannel["DPs"].iteritems():
+		print "\n" + str(datapoint) + ": " + str(id)
 
 
 
