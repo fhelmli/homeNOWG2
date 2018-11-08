@@ -463,9 +463,9 @@ def testParseResults():
 
 	print "\n\n\n"
 
-	# und dann der einfache Zugriff auf alle Räume und ihre Kanäle (Python 2.x):
+	# und dann der einfache Zugriff auf alle Räume und ihre Kanäle (Python 2.x, in Python 3.x wäre es nur items(), dann geht es aber nicht als iOS-App.):
 	for id, rooms in pythonDataStructureRooms.iteritems():
-		print rooms["Name"] + "\nChannels in this Room:\n"
+		print "Room " + rooms["Name"] + " has the ID " + str(id) + "\nChannels in this Room:\n"
 
 		channelsString = ""
 		for channel in rooms["Channels"]:
@@ -482,7 +482,7 @@ def testParseResults():
 	
 	# und dann der einfache Zugriff auf alle Gewerke und ihre Kanäle (Python 2.x):
 	for id, functions in pythonDataStructureFunctions.iteritems():
-		print functions["Name"] + "\nChannels in this Function category:\n"
+		print "Function category " + functions["Name"] + " has the ID " + str(id) + "\nChannels in this Function category:\n"
 
 		channelsString = ""
 		for channel in functions["Channels"]:
