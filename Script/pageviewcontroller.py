@@ -64,7 +64,7 @@ def addWindow(additionalContents, nextWindowId = None):
 	return additionalContents, nextWindowId
 
 def insertTextInWindow(index, text):
-	return """/*eval*/document.getElementById('window""" + str(index) + """').innerHTML = 'Window contents of window """ + str(index) + """ changed to """ + text + """!<p>Translation test: """ + tr("Rooms") + """<p><svg viewBox="0 0 560 560"><path fill="#""" + str(40+index*10) +"""20""" + str(90-index*14) + """" d="M42 27v-20c0-3.7-3.3-7-7-7s-7 3.3-7 7v21l12 15-7 15.7c14.5 13.9 35 2.8 35-13.7 0-13.3-13.4-21.8-26-18zm6 25c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7z"/><path d="M14 27v-20c0-3.7-3.3-7-7-7s-7 3.3-7 7v41c0 8.2 9.2 17 20 17s20-9.2 20-20c0-13.3-13.4-21.8-26-18zm6 25c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7z"/></svg>';"""
+	return """/*eval*/document.getElementById('window""" + str(index) + """').innerHTML = 'Window contents of window """ + str(index) + """ changed to """ + text + """!<p>Translation test: de/en: <p>""" + tr("Rooms", "de") + " / " + tr("Rooms", "en") + "<p>" + tr("Devices", "de") + " / " + tr("Devices", "en") + """<p><svg viewBox="0 0 560 560"><path fill="#""" + str(40+index*10) +"""20""" + str(90-index*14) + """" d="M42 27v-20c0-3.7-3.3-7-7-7s-7 3.3-7 7v21l12 15-7 15.7c14.5 13.9 35 2.8 35-13.7 0-13.3-13.4-21.8-26-18zm6 25c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7z"/><path d="M14 27v-20c0-3.7-3.3-7-7-7s-7 3.3-7 7v41c0 8.2 9.2 17 20 17s20-9.2 20-20c0-13.3-13.4-21.8-26-18zm6 25c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7z"/></svg>';"""
 
 
 
