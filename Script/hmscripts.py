@@ -1,6 +1,7 @@
 from urllib import urlencode
 import urllib2
 import base64
+import json
 
 def executeHMScript(url, script):
     hmScript = script
@@ -435,4 +436,31 @@ def testHMScripts():
 
     return answer1 + answer2 + answer3 + answer4 + answer5 + answer6 + answer7 + answer8
 
+
+
+def testParseResults():
+	resultDemo = """
+		{"1234": {"Name": "Aussen", "TypeName":"ENUM_ROOMS", "EnumInfo":"", "Channels":[13127,13152,3356,3350,3636,15696,15699,6206,6209,3486,2293,13195]}, "1231": {"Name": "Bad%20EG", "TypeName":"ENUM_ROOMS", "EnumInfo":"", "Channels":[3147,9849,9702,4415,9657,4412,9697,9707,9931,9926,9921,9893,9897,4477,8894]}, "1229": {"Name": "Bad%2BWC%20OG", "TypeName":"ENUM_ROOMS", "EnumInfo":"", "Channels":[5812,5809,5806,4111,2457,4240,2505,2849,2850,4237,2483,9011,4170,4180,4192,4302,2822,8853]}, "1233": {"Name": "Balkon%20OG", "TypeName":"ENUM_ROOMS", "EnumInfo":"", "Channels":[8985]}, "1230": {"Name": "Buero%20OG", "TypeName":"ENUM_ROOMS", "EnumInfo":"", "Channels":[3085,3116,5934,5931,9415,3225,9397,9403,9409,9588,5960]}, "1590": {"Name": "Eingangsbereich%20KG", "TypeName":"ENUM_ROOMS", "EnumInfo":"", "Channels":[7629,9846,11646,9843,11652,6062,6059,12064,10243,10193,10198,10208,10223,10218,10203,10213,10238,10233,10228,9631,12490,6024,1171,9619,9623,9627,2126,2129,2134]}, "1226": {"Name": "Essen%2BKueche%20EG", "TypeName":"ENUM_ROOMS", "EnumInfo":"", "Channels":[1341,1353,1347,1365,1359,1335,9125,2660,2691,3895,3901,3195,15527,10098,9119,3173,15524,10078,9255,10083,10093,10088,11513,10006,9978,9968,9963,9958,9973,10001,9991,10011,9996,10030,10034,10038,10042,11520,15489,15554]}, "1591": {"Name": "Freiraum%20DG", "TypeName":"ENUM_ROOMS", "EnumInfo":"", "Channels":[10332,10329,13572,13575,7405,2602,7230,5202]}, "1592": {"Name": "Gaestebereich%20DG", "TypeName":"ENUM_ROOMS", "EnumInfo":"", "Channels":[3982,3979]}, "1232": {"Name": "Garage%20KG", "TypeName":"ENUM_ROOMS", "EnumInfo":"", "Channels":[9846,3775,12024,6120,6117,9292,3770,3767,12490,3793]}, "1594": {"Name": "Heizraum%20KG", "TypeName":"ENUM_ROOMS", "EnumInfo":"", "Channels":[4753]}, "1589": {"Name": "Keller%20KG", "TypeName":"ENUM_ROOMS", "EnumInfo":"", "Channels":[6091,6088,7562]}, "1228": {"Name": "Kinderzimmer%20OG", "TypeName":"ENUM_ROOMS", "EnumInfo":"", "Channels":[5291,5285,5261,5273,5279,5267,9858,1579,5998,5340,5995,5334,5376,5328,5322,5474,3254,15657]}, "1593": {"Name": "Labor%20DG", "TypeName":"ENUM_ROOMS", "EnumInfo":"", "Channels":[10335,4008,7236,7136,8397,7269,7263,1175,1179]}, "1588": {"Name": "Lagerraum%20KG", "TypeName":"ENUM_ROOMS", "EnumInfo":"", "Channels":[6146,9298]}, "1597": {"Name": "Schaltschrank%20EG", "TypeName":"ENUM_ROOMS", "EnumInfo":"", "Channels":[9174,9182]}, "1227": {"Name": "Schlafzimmer%20OG", "TypeName":"ENUM_ROOMS", "EnumInfo":"", "Channels":[5848,5845,9861,1796,1789,1786,1783,1541,2880,2982,2959,5876,1721,1710,1707,1704,3283,2906]}, "1596": {"Name": "Stiegenhaus%20EG-OG", "TypeName":"ENUM_ROOMS", "EnumInfo":"", "Channels":[6579,6357,1207,1211,4046,1398,1392,1410,1404,1422,1416,1434,1428,1446,1440,1458,1452,1470,1464,7460,9336,7328,7322]}, "1595": {"Name": "Stiegenhaus%20KG-EG", "TypeName":"ENUM_ROOMS", "EnumInfo":"", "Channels":[14234,14226,14242,14250,6579,7629,7662,7601]}, "1235": {"Name": "Terrasse%20EG", "TypeName":"ENUM_ROOMS", "EnumInfo":"", "Channels":[8517,8523,8125,8119,8143,8149,8131,8137,11922,8979,8244,8216,9852,1183,1187]}, "1225": {"Name": "Wohnzimmer%20EG", "TypeName":"ENUM_ROOMS", "EnumInfo":"", "Channels":[8490,8466,8460,8478,8472,8484,7751,8071,1293,1287,9855,4590,9809,9804,9814,9799,4587,9794,9819,10299,10267,10271,10275,10279,10283,10287,10291,10295,9852,4652,1199,1203,1191,1195]}}
+		"""
+
+
+	# resultDemo ist eine Datenstruktur Raeume, die von der CCU 1:1 zurueckkommt, wenn man es richtig macht.
+	# mit dieser einen Zeile mache ich daraus ein Python-Dictionary:
+	pythonDataStructure = json.loads(resultDemo)
+
+	print pythonDataStructure
+
+	print "\n\n\n"
+
+	# und dann der einfache Zugriff auf alle Raeume und ihre Daten:
+	for id, rooms in pythonDataStructure.iteritems():
+		print rooms["Name"] + "\nChannels in this Room:\n"
+
+		for channel in rooms["Channels"]:
+			print str(channel) + "\n"
+		print "\n\n"
+
+
 #cool = testHMScripts()
+
+testParseResults()
