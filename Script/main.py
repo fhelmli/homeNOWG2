@@ -35,7 +35,9 @@ if inAnApp:
 	
 	#time.sleep(1.0)
 	
-	file_path = os.path.abspath('html/main.html')
+	file_path = os.path.dirname(sys.executable) + '/Script/html/main.html'
+	
+	print file_path
 	
 	v = ui.load_view()
 	
