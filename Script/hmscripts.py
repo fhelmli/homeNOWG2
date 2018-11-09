@@ -519,4 +519,4 @@ def testParseResults():
 
 #cool = testHMScripts()
 
-testParseResults()
+#testParseResults()

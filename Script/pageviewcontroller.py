@@ -104,19 +104,19 @@ class MyServer(BaseHTTPRequestHandler):
 			
 			setGlobalLanguage("de")
 
-			additionalContents += tr("Favorites")
+			additionalContents += " " + tr("Favorites")
 
 			setGlobalLanguage("en")
 
-			additionalContents += tr("Functions")
+			additionalContents += " " + tr("Functions")
 
 			setGlobalLanguage("en")
 
-			additionalContents += tr("Password")
+			additionalContents += " " + tr("Password")
 
 			setGlobalLanguage("de")
 
-			additionalContents += tr("Rooms")
+			additionalContents += " " + tr("Rooms")
 
 
 			winId = None
