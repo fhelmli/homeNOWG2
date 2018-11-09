@@ -5,7 +5,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{0, -12}, {240, 252}}",
+        "frame" : "{{0, -46}, {240, 320}}",
         "class" : "WebView",
         "attributes" : {
           "flex" : "WH",
@@ -22,7 +22,7 @@
     "class" : "View",
     "attributes" : {
       "enabled" : true,
-      "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
+      "background_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
       "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
       "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
       "flex" : ""
