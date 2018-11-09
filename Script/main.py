@@ -16,6 +16,7 @@ if found:
 if inAnApp:
 	import ui
 import os
+import sys
 import threading
 
 
@@ -36,6 +37,9 @@ if inAnApp:
 	#time.sleep(1.0)
 	
 	file_path = os.path.dirname(sys.executable) + '/Script/html/main.html'
+	if "Pythonista3" in file_path:
+		file_path = os.path.abspath('html/main.html')
+	
 	
 	print file_path
 	
