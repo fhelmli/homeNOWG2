@@ -43,24 +43,36 @@ if inAnApp:
 	if "Pythonista3" in file_path:
 		file_path = os.path.abspath('html/main.html')
 	else:
-		f = ObjCClass('NSBundle').mainBundle().resourcePath()
-		print f + "\n\n"
+		f = ObjCClass('NSBundle').mainBundle().bundlePath().UTF8String()
+		#print f + "\n\n"
 		
 		#docpath = str(f.URLsForDirectory_inDomains_(9,1)[0].path())
 		docpath = f
 		
 		file_path = docpath + '/Script/html/main.html'
 	
-	print file_path
+	#print file_path
 	
-	print os.path.realpath(__file__)
+	#print os.path.realpath(__file__)
+
+#	directory = os.path.abspath(docpath)
+
+#	for filename in os.listdir(directory):
+#		#if filename.endswith('.html'):
+#		fname = os.path.join(directory,filename)
+#		print os.path.abspath(fname)
+
+
+
 
 	v = ui.load_view()
 	
 	#v['webview1'].load_url('http://localhost:' + str(hostPort) + '/oachkatzlschwoaf0815')
 	
-	v['webview1'].load_url(file_path)
+#v['webview1'].load_url('file://' + file_path)
 	
+	v['webview1'].load_url(os.path.abspath(file_path))
+
 	v.present(style='sheet', title_bar_color='#000000',
 	#hide_close_button=True,
 	hide_title_bar=True,
