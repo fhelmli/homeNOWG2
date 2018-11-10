@@ -13,37 +13,37 @@
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "Icon_58.png",
+      "filename" : "TheIcon_58.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "Icon_87.png",
+      "filename" : "TheIcon_87.png",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "Icon_80.png",
+      "filename" : "TheIcon_80.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "Icon_120b.png",
+      "filename" : "TheIcon_120.png",
       "scale" : "3x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "Icon_120.png",
+      "filename" : "TheIcon_120-1.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "Icon_180.png",
+      "filename" : "TheIcon_180.png",
       "scale" : "3x"
     },
     {
@@ -59,43 +59,43 @@
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "Icon_29.png",
+      "filename" : "TheIcon_29.png",
       "scale" : "1x"
     },
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "Icon_58b.png",
+      "filename" : "TheIcon_58-1.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "Icon_40.png",
+      "filename" : "TheIcon_40.png",
       "scale" : "1x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "Icon_80b.png",
+      "filename" : "TheIcon_80-1.png",
       "scale" : "2x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "Icon_76.png",
+      "filename" : "TheIcon_76.png",
       "scale" : "1x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "Icon_152.png",
+      "filename" : "TheIcon_152.png",
       "scale" : "2x"
     },
     {
       "size" : "83.5x83.5",
       "idiom" : "ipad",
-      "filename" : "Icon_167.png",
+      "filename" : "TheIcon_512.png",
       "scale" : "2x"
     },
     {
