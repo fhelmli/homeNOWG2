@@ -131,6 +131,12 @@ class MyServer(BaseHTTPRequestHandler):
 			windows = "<h1>Windows test:</h1><p>" + additionalContents
 		
 
+			hugeFile = open("oldWidgets.txt", "r")
+			
+			wholeFileOfSVGs = hugeFile.read()
+
+
+
 			self.wfile.write(bytes("""
 				
 				
@@ -353,7 +359,7 @@ class MyServer(BaseHTTPRequestHandler):
 						</div>
 
 						
-						""")) # + allCCUInfoInOne
+						""" + wholeFileOfSVGs)) # + allCCUInfoInOne
 		if '/oachkatzlschwoaf0815_' in self.path and '_getWindowContent' in self.path:
 			contentsInWindows = insertTextInWindow(0, "COOL0")
 			contentsInWindows += insertTextInWindow(1, "COOL1")
