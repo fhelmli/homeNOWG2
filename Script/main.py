@@ -19,7 +19,8 @@ import os
 import sys
 import threading
 
-import objc_util
+if inAnApp:
+	from objc_util import *
 
 
 from pageviewcontroller import worker
@@ -41,8 +42,8 @@ if inAnApp:
 	file_path = os.path.dirname(sys.executable) + '/Script/html/main.html'
 	if "Pythonista3" in file_path:
 		file_path = os.path.abspath('html/main.html')
-	else
-		f = objc_util.ObjCClass('NSBundle').mainBundle().resourcePath()
+	else:
+		f = ObjCClass('NSBundle').mainBundle().resourcePath()
 		print f + "\n\n"
 		
 		#docpath = str(f.URLsForDirectory_inDomains_(9,1)[0].path())
