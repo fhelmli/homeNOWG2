@@ -289,6 +289,11 @@
 				<div>
 					
 					
+
+					
+					<script src="js/three.min.js"></script>
+
+					
 					
 					<div class="row">
 						<!--<div id="lowerRow" class="col-xs-12 col-sm-6 col-md-6 col-lg-4 widget-container">-->
@@ -300,6 +305,45 @@
 						</div>
 						
 						<script>
+
+							var camera, scene, renderer;
+							var geometry, material, mesh;
+							
+							//init();
+							//animate();
+							
+							function init() {
+								
+								camera = new THREE.PerspectiveCamera( 70, 1.0/*window.innerWidth / window.innerHeight*/, 0.01, 10 );
+								camera.position.z = 1;
+								
+								scene = new THREE.Scene();
+								
+								geometry = new THREE.BoxGeometry( 0.2, 0.2, 0.2 );
+								material = new THREE.MeshNormalMaterial();
+								
+								mesh = new THREE.Mesh( geometry, material );
+								scene.add( mesh );
+								
+								renderer = new THREE.WebGLRenderer( { antialias: true } );
+								renderer.setSize( 360, 360/*window.innerWidth, window.innerHeight*/ );
+								document.getElementById("dreidee").appendChild( renderer.domElement );
+								
+							}
+						
+						function animate() {
+							
+							requestAnimationFrame( animate );
+							
+							mesh.rotation.x += 0.01;
+							mesh.rotation.y += 0.02;
+							
+							renderer.render( scene, camera );
+							
+						}
+
+
+
 							function loadXMLDoc() {
 								var randomNum = Math.floor(Math.random() * 10000000);
 
@@ -318,6 +362,14 @@
 											{
 												document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
 												xmlhttp.open("GET", "http://localhost:8083/oachkatzlschwoaf0815_" + randomNum + "_getWindowContent", true); // this means get SVG or whatever you want to put into a page, and evaluate the code ## localhost ## 212.227.254.117
+												
+												try
+												{
+													init();
+													animate();
+												}
+												catch (e) {}
+												
 												xmlhttp.send();
 											}
 										}

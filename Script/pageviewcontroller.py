@@ -359,7 +359,29 @@ class MyServer(BaseHTTPRequestHandler):
 						</div>
 
 						
-						""" + wholeFileOfSVGs)) # + allCCUInfoInOne
+						"""
+								   + wholeFileOfSVGs
+								   
+								   + """
+							
+							
+							<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 widget-container">
+							<section class="widget">
+							<form role="form">
+							<fieldset>
+							
+							
+							<div id="dreidee" style="height:380px">
+							</div>
+							
+							
+							</fieldset>
+							</form>
+							</section>
+							</div>
+							
+							
+							""")) # + allCCUInfoInOne
 		if '/oachkatzlschwoaf0815_' in self.path and '_getWindowContent' in self.path:
 			contentsInWindows = insertTextInWindow(0, "COOL0")
 			contentsInWindows += insertTextInWindow(1, "COOL1")
