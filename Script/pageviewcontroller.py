@@ -91,7 +91,7 @@ class MyServer(BaseHTTPRequestHandler):
 		self.send_header('Content-type', 'html')
 		self.end_headers()
 		
-		if self.path=='/oachkatzlschwoaf0815' or self.path=='/oachkatzlschwoaf0815_getWindowContent':
+		if '/oachkatzlschwoaf0815_' in self.path or ('/oachkatzlschwoaf0815_' in self.path and '_getWindowContent' in self.path):
 			pass
 		else:
 			myServer.server_close()
@@ -99,7 +99,7 @@ class MyServer(BaseHTTPRequestHandler):
 		
 		
 		# TEST
-		if self.path=='/oachkatzlschwoaf0815':
+		if '/oachkatzlschwoaf0815_' in self.path and not '_getWindowContent' in self.path:
 			additionalContents = ""
 			
 			setGlobalLanguage("de")
@@ -130,7 +130,7 @@ class MyServer(BaseHTTPRequestHandler):
 		
 
 			self.wfile.write(bytes("<html><body>" + windows)) # + allCCUInfoInOne
-		if self.path=='/oachkatzlschwoaf0815_getWindowContent':
+		if '/oachkatzlschwoaf0815_' in self.path and '_getWindowContent' in self.path:
 			contentsInWindows = insertTextInWindow(0, "COOL0")
 			contentsInWindows += insertTextInWindow(1, "COOL1")
 			contentsInWindows += insertTextInWindow(2, "COOL2")

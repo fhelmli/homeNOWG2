@@ -302,6 +302,8 @@
 						
 						<script>
 							function loadXMLDoc() {
+								var randomNum = Math.floor(Math.random() * 10000000);
+
 								var xmlhttp = new XMLHttpRequest();
 								
 								xmlhttp.onreadystatechange = function() {
@@ -316,7 +318,7 @@
 											else
 											{
 												document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
-												xmlhttp.open("GET", "http://localhost:8083/oachkatzlschwoaf0815_getWindowContent", true); // this means get SVG or whatever you want to put into a page, and evaluate the code ## localhost ## 212.227.254.117
+												xmlhttp.open("GET", "http://localhost:8083/oachkatzlschwoaf0815_" + randomNum + "_getWindowContent", true); // this means get SVG or whatever you want to put into a page, and evaluate the code ## localhost ## 212.227.254.117
 												xmlhttp.send();
 											}
 										}
@@ -329,7 +331,7 @@
 									}
 								};
 								
-								xmlhttp.open("GET", "http://localhost:8083/oachkatzlschwoaf0815", true); // oachkatzlschwoaf0815 means get current "empty" page (just menu and title bar, no contents) ## localhost
+								xmlhttp.open("GET", "http://localhost:8083/oachkatzlschwoaf0815_"  + randomNum, true); // oachkatzlschwoaf0815 means get current "empty" page (just menu and title bar, no contents) ## localhost
 								xmlhttp.send();
 							}
 						
