@@ -18859,11 +18859,12 @@ body.background-dark {
 }
 
 body.background-white {
-	background-color: rgba(202, 205, 204, 1.0);
-	/*    background-image: radial-gradient(farthest-side ellipse at 10% 0, rgba(202, 205, 204, 0.9), rgba(193, 212, 219, 0.89), rgba(255, 255, 250, 0.9));
-	 background-image: -webkit-radial-gradient(10% 0, farthest-side ellipse, rgba(202, 205, 204, 0.9), rgba(193, 212, 219, 0.89), rgba(255, 255, 250, 0.9));
-	 background-image: -moz-radial-gradient(10% 0, farthest-side ellipse, rgba(202, 205, 204, 0.9), rgba(193, 212, 219, 0.89), rgba(255, 255, 250, 0.9));
-	 */
+	/*background-color: rgba(202, 205, 204, 1.0);*/
+	/*background-color: rgba(202, 205, 204, 1.0);*/
+	 background-image: radial-gradient(farthest-side ellipse at 10% 0, rgba(102, 105, 204, 0.9), rgba(93, 12, 219, 0.89), rgba(255, 255, 250, 0.9));
+	 background-image: -webkit-radial-gradient(10% 0, farthest-side ellipse, rgba(102, 105, 204, 0.9), rgba(93, 112, 219, 0.89), rgba(255, 255, 250, 0.9));
+	 background-image: -moz-radial-gradient(10% 0, farthest-side ellipse, rgba(102, 105, 204, 0.9), rgba(93, 112, 219, 0.89), rgba(255, 255, 250, 0.9));
+	 
 	/*	background-attachment: fixed, fixed*/
 }
 

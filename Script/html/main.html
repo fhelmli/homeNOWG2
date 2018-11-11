@@ -5,6 +5,8 @@
 		<title>homeNOW</title>
 		
 		<link href="css/application.min.css" rel="stylesheet">
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		
 			<link rel="shortcut icon" href="img/favicon.png">
 				<meta name="viewport" content="width=device-width, initial-scale=1.0">
 					<meta name="description" content="">
@@ -83,16 +85,16 @@
 								
 								var currentTheme = "dark";
 								//			if (localStorage.getItem("UITheme")=="white")
-								{
+								/*{
 									currentTheme = "dark";
 									switchTheme();
 								}
-								/*			else
-								 {
-								 currentTheme = "white";
+											else
+								 */{
+								 currentTheme = "dark";
 								 switchTheme();
 								 }
-								 */
+								
 								function switchTheme()
 								{
 									if (currentTheme=="white")
@@ -357,6 +359,8 @@
 												//alert(xmlhttp.responseText);
 												eval(xmlhttp.responseText);
 												
+												currentTheme = "dark";
+												switchTheme();
 											}
 											else
 											{
@@ -367,6 +371,9 @@
 												{
 													init();
 													animate();
+												
+												
+												
 												}
 												catch (e) {}
 												
