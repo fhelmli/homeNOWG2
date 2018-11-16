@@ -139,13 +139,23 @@ class MyServer(BaseHTTPRequestHandler):
 
 			self.wfile.write(bytes("""
 				
+				<div class="col-6 col-sm-4 col-md-6 col-lg-4 widget-pie__item">
+					<div class="easy-pie-chart" data-percent="11" data-size="80" data-track-color="rgba(0,0,0,0.35)" data-bar-color="#fff">
+						<span class="easy-pie-chart__value">11</span>
+					</div>
+					<div class="widget-pie__title">PYTHON<br> TEST</div>
+				</div>
+
+				
+				""" + """
+				
 				
 				<!--
 				Version 0.18 Robert Peiﬂl & Thomas Berk 20160415
 				Bewegung und Energieverbrauch grau
 				-->
 				
-				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 widget-container">
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 widget-container widget-pie__item">
 				<section class="widget">
 				<form role="form">
 				<fieldset>
@@ -346,7 +356,7 @@ class MyServer(BaseHTTPRequestHandler):
 				
 				
 				""" + """
-					<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 widget-container">
+					<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 widget-container widget-pie__item">
 					<section class="widget">
 					<form role="form">
 					<fieldset>
@@ -365,7 +375,7 @@ class MyServer(BaseHTTPRequestHandler):
 								   + """
 							
 							
-							<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 widget-container">
+							<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 widget-container widget-pie__item">
 							<section class="widget">
 							<form role="form">
 							<fieldset>
@@ -388,7 +398,7 @@ class MyServer(BaseHTTPRequestHandler):
 			contentsInWindows += insertTextInWindow(2, "COOL2")
 			contentsInWindows += insertTextInWindow(3, "COOL3")
 			contentsInWindows += insertTextInWindow(4, "COOL4")
-			self.wfile.write(bytes(contentsInWindows))
+			self.wfile.write(bytes(contentsInWindows) + """<script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>""")
 
 		
 		#if inAnApp:
