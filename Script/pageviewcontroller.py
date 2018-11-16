@@ -122,11 +122,11 @@ class MyServer(BaseHTTPRequestHandler):
 
 
 			winId = None
-			additionalContents, winId = addWindow(additionalContents, winId)
-			additionalContents, winId = addWindow(additionalContents, winId)
-			additionalContents, winId = addWindow(additionalContents, winId)
-			additionalContents, winId = addWindow(additionalContents, winId)
-			additionalContents, winId = addWindow(additionalContents, winId)
+			#additionalContents, winId = addWindow(additionalContents, winId)
+			#additionalContents, winId = addWindow(additionalContents, winId)
+			#additionalContents, winId = addWindow(additionalContents, winId)
+			#additionalContents, winId = addWindow(additionalContents, winId)
+			#additionalContents, winId = addWindow(additionalContents, winId)
 			
 			windows = "<h1>Windows test:</h1><p>" + additionalContents
 		

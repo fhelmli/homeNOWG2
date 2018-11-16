@@ -576,7 +576,7 @@ def getDeviceList(testPrint):
 ###
 
 # getting devices from the CCU at 10.0.0.2
-devices = getDeviceList(True)
+#devices = getDeviceList(True)
 
 
 #usage of this dictionary 'devices':
