@@ -45,9 +45,9 @@ if inAnApp:
 	
 	#time.sleep(1.0)
 	
-	file_path = os.path.dirname(sys.executable) + '/Script/html/main.html'
+	file_path = os.path.dirname(sys.executable) + '/Script/html/design0/index.html'
 	if "Pythonista3" in file_path:
-		file_path = os.path.abspath('html/design0/main.html')
+		file_path = os.path.abspath('html/design0/index.html')
 	else:
 		f = ObjCClass('NSBundle').mainBundle().bundlePath().UTF8String()
 		#print f + "\n\n"
@@ -55,7 +55,7 @@ if inAnApp:
 		#docpath = str(f.URLsForDirectory_inDomains_(9,1)[0].path())
 		docpath = f
 		
-		file_path = docpath + '/Script/html/design0/main.html'
+		file_path = docpath + '/Script/html/design0/index.html'
 	
 	#print file_path
 	
