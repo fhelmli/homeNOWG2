@@ -58,8 +58,10 @@
 						
 						<hr>
 						
-						<li class="@@typeactive"><a href="javascript:$('.navigation-trigger').click();$('#pageTitle').click();$('#pageTitle').html('Einstellungen');$('#windowName0').html('IP-Adresse der CCU');setTimeout(function(){$('#quickStats').hide();$('#pageTitle').click();}, 1000);"><i class="zmdi zmdi-format-underlined"></i>Einstellungen</a></li>
+						<li class="@@typeactive"><a href="javascript:$('.navigation-trigger').click();$('#pageTitle').click();$('#pageTitle').html('Einstellungen');$('#windowName0').html('IP-Adresse der CCU');setTimeout(function(){$('#quickStats').hide();$('#pageTitle').click(); }, 1000);"><i class="zmdi zmdi-format-underlined"></i>Einstellungen</a></li>
 						
+						<li class="@@typeactive"><a href="javascript:setTimeout(function(){ $('body').attr(  'data-sa-theme', '' + ((parseInt($('body').attr('data-sa-theme')) +1) % 10 + 1)  );    }, 100);"><i class="zmdi zmdi-format-underlined"></i>Farbschema wechseln</a></li>
+
 						
 					</ul>
 				</div>
@@ -68,7 +70,7 @@
 			<section class="content content--full">
 				<div id="contentWithTitle" class="content__inner">
 					<h1><header class="content__title">
-						<a data-toggle="collapse" data-target="#collapseWholeContent" href="#collapseWholeContent" aria-expanded="true" aria-controls="collapseWholeContent"><span id="pageTitle">Dashboard</span></a></h1>
+						<a  style="color:#BFBFBF;" data-toggle="collapse" data-target="#collapseWholeContent" href="#collapseWholeContent" aria-expanded="true" aria-controls="collapseWholeContent"><span id="pageTitle">Dashboard</span></a></h1>
 					</header>
 					
 					<div class="collaps" id="collapseWholeContent">
@@ -124,7 +126,7 @@
 								
 								<div class="card">
 									<div class="card-body">
-										<h3 style="padding-bottom:30px;"><a class="card-title" data-toggle="collapse" href="#collapseExample" data-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample"><span id="windowName0">Wohnzimmer</span></a></h3>
+										<h3 style="padding-bottom:30px;"><a class="card-title" style="color:#BFBFBF;" data-toggle="collapse" href="#collapseExample" data-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample"><span id="windowName0">Wohnzimmer</span></a></h3>
 										<!--<a class="card-title" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
 										 Link with href
 										 </a>-->
