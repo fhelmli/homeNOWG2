@@ -72,6 +72,10 @@ if inAnApp:
 
 
 	v = ui.load_view()
+	v.flex = "WH"
+	
+	v['webview1'].frame = 0, -44, v.width, v.height+44
+	v['webview1'].flex = "WH"
 	
 	#v['webview1'].load_url('http://localhost:' + str(hostPort) + '/oachkatzlschwoaf0815')
 	
@@ -79,7 +83,7 @@ if inAnApp:
 	
 	v['webview1'].load_url(os.path.abspath(file_path))
 
-	v.present(style='sheet', title_bar_color='#000000',
+	v.present(style='full_screen', title_bar_color='#000000',
 	#hide_close_button=True,
 	hide_title_bar=True,
 	animated=False)

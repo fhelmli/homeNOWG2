@@ -5,7 +5,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{0, -46}, {240, 320}}",
+        "frame" : "{{0, -44}, {1024, 812}}",
         "class" : "WebView",
         "attributes" : {
           "flex" : "WH",
@@ -18,12 +18,13 @@
         "selected" : true
       }
     ],
-    "frame" : "{{0, 0}, {240, 240}}",
+    "frame" : "{{0, 0}, {1024, 768}}",
     "class" : "View",
     "attributes" : {
-      "enabled" : true,
       "background_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
+      "enabled" : true,
       "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
+      "custom_class" : "ui.View",
       "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
       "flex" : ""
     },

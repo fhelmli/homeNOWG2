@@ -6,37 +6,27 @@ import urllib2
 import base64
 import json
 
-def executeHMScript(url, script):
+def executeHMScript(url, username, password, script):
 	hmScript = script
-
-	username = 'xyz'
-	password = 'abcdef'
-	#url = "http://10.0.0.2:8181/Test.exe"
 	
+	urlFull = "http://" + url + ":8181/Test.exe"
 	
-	url = '10.0.0.2'
-	url = "http://" + url + ":8181/Test.exe"
-	
-	#print('url: '+url)
-	#username = 'franzhelmli2'
-	#password = 'cool2pi'
-	
-	#username='admin'
-	#password=''
+	print urlFull
 	
 	credentials = ('%s:%s' % (username, password))
 	encoded_credentials = base64.b64encode(credentials.encode('ascii'))
-
-	post = hmScript  #urlencode(hmScript)
-
+	
+	#postData = urllib.quote_plus(hmScript)  #hmScript  #urlencode(hmScript)
+	postData = "var y=43;" + hmScript
+	
 	try:
-		req = urllib2.Request(url, post)
+		req = urllib2.Request(urlFull, postData)
 		req.add_header('Authorization', 'Basic %s' % encoded_credentials.decode("ascii"))
 		response = urllib2.urlopen(req).read()
 	except:
 		response = ""
 
-	#print response
+	print "Answer from CCU: " + response
 
 	return response
 
@@ -541,16 +531,20 @@ testResultFromCCU = """{"9879":{"Name":"12-IO%20Bad%20EG","TypeName":"DEVICE","H
 
 def getDeviceList(testPrint):
 	
-	resultFromCCU = executeHMScript("", g_devicesScript)
+	url = "1501.2.meine-homematic.de"
+	username = "franzhelmli2"
+	passwd = "cool2pi"
+	
+	resultFromCCU = executeHMScript(url, username, passwd, g_devicesScript)
 	resultFromCCUCutOffToJSON = ""
 	
 	# if CCU really returned something, use it, else show the test data
-	if "}}" not in resultFromCCU:
-		k = testResultFromCCU.rfind("}}") + 2
-		resultFromCCUCutOffToJSON = testResultFromCCU[:k]
-	else:
-		k = resultFromCCU.rfind("}}") + 2
-		resultFromCCUCutOffToJSON = resultFromCCU[:k]
+	#if "}}" not in resultFromCCU:
+	#	k = testResultFromCCU.rfind("}}") + 2
+	#	resultFromCCUCutOffToJSON = testResultFromCCU[:k]
+	#else:
+	k = resultFromCCU.rfind("}}") + 2
+	resultFromCCUCutOffToJSON = resultFromCCU[:k]
 	
 	#print testResultFromCCU
 	
