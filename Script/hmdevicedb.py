@@ -1,16 +1,18 @@
-#vor all devices this class defines the elements ane the importance and the visualisation
+import sys
+sys.path.append('devices')
+import deviceBase
+import deviceTempHum
 
-class hmDeviceDataPointEntry:
-	type
-	name
-	key
-	id
-	channel
-	
-	
 
-class hmDeviceDB
-	hmDevice[][][]=0
-	#def __init__(self):
-		#self.hmDevice['hm-cn']['1']['SET_TEMPERATURE']=
-		
+
+import svgmanager
+
+class hmdevicedb:
+	svgManager=[]
+	def __init__(self,svgManager):
+		print ('hmdevicedb')
+		self.svgManager=svgManager
+	def getSVGClass(self,hmdevices):
+		if hmdevice=='HM-WDS10-TH-O':
+			return deviceTempHum(self.svgManager)
+		return None

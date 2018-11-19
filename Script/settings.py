@@ -1,4 +1,5 @@
 import logging
+import console
 
 class settings:
 	localIp=""
@@ -17,12 +18,15 @@ class settings:
 	#time in sec between pollings
 	pollingTime=0
 	
+	colorSchema=0
+	
 	debug=0
 	
 	#default=0...nix
 	#default=1... franz graz
-	#default=2... franz lamperstätten
+	#default=2... franz lamperstaetten
 	def __init__(self,default=0):
+		console.clear()
 		print("settings constructor:")
 		logging.info('settings constructor')
 		self.ip="10.0.0.1"
@@ -37,7 +41,7 @@ class settings:
 	def url(self):
 		return self.localIp
 	
-	def print(self):
+	def printc(self):
 		print("settings print:")
 		print("  ip: "+self.ip)
 		print("  connectiontype: "+str(self.connectionType))
@@ -46,6 +50,6 @@ class settings:
 def test():
 	print("test function of setting:")
 	mysettings =settings()
-	mysettings.print()
+	mysettings.printc()
 	
 #test()

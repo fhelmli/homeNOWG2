@@ -1,8 +1,13 @@
 import logging
 import xml.etree.ElementTree as ET		
-import urllib.request
+
+#import urllib.request
+import urllib2
+
 import base64
 import random
+import json
+
 
 import settings
 
@@ -78,6 +83,75 @@ def getValue(url,device,number,what):
     return variableContents
 
 
+def executeHMScript(url, script):
+    hmScript = script
+    
+    username = 'admin'
+    password = 'cool2piktm'
+    url = "http://10.0.0.2:8181/Test.exe"
+
+    #url = "http://" + url + ":8181/Test.exe?" + hmScript
+    
+    #print('url: '+url)
+    #username = 'franzhelmli2'
+    #password = 'cool2pi'
+    
+    #username='admin'
+    #password=''
+    
+    credentials = ('%s:%s' % (username, password))
+    encoded_credentials = base64.b64encode(credentials.encode('ascii'))
+
+    post = hmScript  #urlencode(hmScript)
+    req = urllib2.Request(url, post)
+    req.add_header('Authorization', 'Basic %s' % encoded_credentials.decode("ascii"))
+    response = urllib2.urlopen(req,timeout=16).read()
+    
+    #print response
+    
+    return response
+
+
+
+
+
+g_roomsScript = "var x = 42;\n"+\
+"object  oRoom;\n"+\
+"string  sRoomId;\n"+\
+"string  sChannelId;\n"+\
+"boolean bFirst       = true;\n"+\
+"boolean bFirstSecond = true;\n"+\
+"\n"+\
+"Write('{');\n"+\
+"foreach (sRoomId, dom.GetObject(ID_ROOMS).EnumUsedIDs())\n"+\
+"{\n"+\
+"    if (bFirst == false) {\n"+\
+"      WriteLine(',');\n"+\
+"    } else {\n"+\
+"      bFirst = false;\n"+\
+"    }\n"+\
+"    oRoom = dom.GetObject(sRoomId);\n"+\
+"	Write('\"' # sRoomId # '\": ');\n"+\
+"    Write('{\"Name\": \"');\n"+\
+"    WriteURL(oRoom.Name());\n"+\
+"    Write('\", \"TypeName\":\"' # oRoom.TypeName() # '_ROOMS');\n"+\
+"    Write('\", \"EnumInfo\":\"');\n"+\
+"    WriteURL(oRoom.EnumInfo());\n"+\
+"    Write('\", \"Channels\":[');\n"+\
+"	bFirstSecond = true;\n"+\
+"    foreach(sChannelId, oRoom.EnumUsedIDs()) {\n"+\
+"		if (bFirstSecond == false) {\n"+\
+"		  Write(',');\n"+\
+"		} else {\n"+\
+"		  bFirstSecond = false;\n"+\
+"		}\n"+\
+"		Write(sChannelId);\n"+\
+"    }\n"+\
+"    Write(']}');\n"+\
+"}\n"+\
+"WriteLine('}');";
+
+
 
 
 class hmInterface:
@@ -92,6 +166,8 @@ class hmInterface:
 	def getResultFromScript(self,script):
 		if self.demo==1:
 			return random.randrange(10,40)
+		return executeHMScript(self.url,script)
+		
 		url = "http://" + self.url + ":8181/Test.exe?" +script
 		#print('url: '+url)
 		username = 'franzhelmli2'
@@ -143,7 +219,7 @@ class hmInterface:
 	def generateDeviceList(self):
 		print('hminterface generate device list')
 	
-	def print(self):
+	def printc(self):
 		print('hminterface print:')
 
 
@@ -160,18 +236,21 @@ def test():
 	
 	script='mySysVar=dom.GetObject("BidCos-RF.KEQ0909042:4.ACTUAL_TEMPERATURE").Value();'
 	
-	script=       'var objIDs = dom.GetObject(ID_DEVICES).EnumUsedIDs();\n'
-	#script=script+'string id;\n'
-	#script=script+'! Alle Datenpunkte durchlaufen\n'
-	#script=script+'foreach(id, objIDs){\n'
-	#script=script+'  ! Einzelnen Datenpunkt holen\n'
-	#script=script+'  var object = dom.GetObject(id);\n'
-	#script=script+'  ! Namen und Wert des Elements ausgeben\n'
-	#script=script+'  WriteLine("Name: " # object.Name() # ": " #  object.ID());\n'
-	#script=script+'}'
-	script='var b=2*3;'
+	script=       'var objIDs = dom.GetObject(ID_ROOMS).EnumUsedIDs();\n'
+	script=script+'string id;\n'
+	script=script+'! Alle Datenpunkte durchlaufen\n'
+	script=script+'foreach(id, objIDs){\n'
+	script=script+'  ! Einzelnen Datenpunkt holen\n'
+	script=script+'  var object = dom.GetObject(id);\n'
+	script=script+'  ! Namen und Wert des Elements ausgeben\n'
+	script=script+'  WriteLine("Name: " # object.Name() # ": " #  object.ID());\n'
+	script=script+'}'
+	#script='var b=2*3;'
+	
+	#script=g_roomsScript
 	text=interface.getResultFromScript(script)
 	print(text)
+	
 	#root = ET.fromstring(text)
 	#print('')
 	#print('root: '+str(root))

@@ -10,20 +10,20 @@ class hmDevices:
 	def update(self,interface):
 		for hmDeviceElement in self.devices:
 			hmDeviceElement.update(interface)
-	def print(self):
+	def printc(self):
 		print('hmdevices print: len: '+str(len(self.devices)))
 		for hmDeviceElement in self.devices:
-			hmDeviceElement.print()
+			hmDeviceElement.printc()
 			
 def test():
 	print('hmdevices test: ')
 	#interface = hminterface.hmInterface('10.0.0.1')
 	mydevices=hmDevices()
 	dev=hmdevice.hmDevice()
-	dev.print()
+	dev.printc()
 	mydevices.add(dev)
 	mydevices.add(dev)
-	mydevices.print()
+	mydevices.printc()
 	#mydevices.update()
 	
 #test()

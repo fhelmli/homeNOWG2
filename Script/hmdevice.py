@@ -36,8 +36,8 @@ class hmDevice:
 	tendence=0
 	
 	#default 0 nix
-	#defauöt 1 gerät in franz graz
-	#default 2 gerät in franz lamperstätten
+	#default 1 geraet in franz graz
+	#default 2 geraet in franz lamperstaetten
 	def __init__(self,default=0):
 		print('hmdevice constructor:')
 		self.name=''
@@ -75,7 +75,7 @@ class hmDevice:
 		else:
 			self.tendence=0
 	
-	def print(self):
+	def printc(self):
 		print('hmdevice print name: '+self.name+' serial: ' +self.serial+':'+self.port+':'+self.key+ ' room: '+str(self.room)+' section: '+str(self.section) + ' id: '+str(self.id))
 		print('  value: '+str(self.actualValue)+' before: '+str(self.lastValue) + ' t: '+str(self.tendence))
 
@@ -89,10 +89,10 @@ def test():
 	interface = hminterface.hmInterface(s.url(),1)
 	
 	mydev=hmDevice(1)
-	mydev.print()
+	mydev.printc()
 	mydev.update(interface,0)
-	mydev.print()
+	mydev.printc()
 	mydev.updateIdFromSerial(interface)
-	mydev.print()
+	mydev.printc()
 	
 #test()
