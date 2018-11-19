@@ -3,14 +3,19 @@ import svgmanager
 
 class deviceTempHum(deviceBase.deviceBase):
 	mySvgManager=0
-	def __init__(self,mySvgManager):
+	temp=0
+	hum=0
+	
+	def __init__(self,mySvgManager,deviceObj):
 		print ('deviceTempHum constructor')
 		self.mySvgManager=mySvgManager
 		#load svg
 		self.svg=self.mySvgManager.getSvg(1)
+		self.deviceObj=deviceObj
 		
 	def updateValues():
 		print ('deviceTempHum  updatevalues')
+		self.interface.getResultFromScript()
 		
 	def print2():
 		print('device temphum: ')
@@ -18,7 +23,7 @@ class deviceTempHum(deviceBase.deviceBase):
 
 def test():
 	print('devicebase test')
-	tempHum = deviceTempHum()
+	tempHum = deviceTempHum(None)
 
-test()
+#test()
 	

@@ -27,4 +27,4 @@ def test():
 	man.loadSvg(1)
 	man.print2()
 	man.getSvg(1)
-test()
+#test()
