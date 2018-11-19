@@ -2,7 +2,7 @@ import deviceBase
 import svgmanager
 
 class deviceTempHum(deviceBase.deviceBase):
-	mySvgManager=0
+	mySvgManager=0  # muss nach base wandern
 	temp=0
 	hum=0
 	
