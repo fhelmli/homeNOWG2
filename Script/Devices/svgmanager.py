@@ -2,6 +2,9 @@
 
 import exceptions
 
+
+#lazzy loading needes to be implememt3d
+#todo berk thomas
 class svgManager():
 	svgs=[]
 	
@@ -12,7 +15,10 @@ class svgManager():
 		if index<len(self.svgs):
 			return self.svgs[index]
 		else:
-			raise ValueError('svgmanager: wrong index used')
+			loadSvg(self,index)
+			#raise ValueError('svgmanager: wrong index used')
+			#load!!
+			
 	
 	def loadSvg(self,index):
 		print('svg manager load svgs ')

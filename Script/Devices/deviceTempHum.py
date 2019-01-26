@@ -2,23 +2,32 @@ import deviceBase
 import svgmanager
 
 class deviceTempHum(deviceBase.deviceBase):
-	mySvgManager=0  # muss nach base wandern
-	temp=0
-	hum=0
+	temp=[]
+	lastTemp=[]
+	
 	
 	def __init__(self,mySvgManager,deviceObj):
 		print ('deviceTempHum constructor')
 		self.mySvgManager=mySvgManager
 		#load svg
-		self.svg=self.mySvgManager.getSvg(1)
+		#self.svg=self.mySvgManager.getSvg(1)
 		self.deviceObj=deviceObj
+		self.updateAdr()
 		
-	def updateValues():
+	@staticmethod
+	def getDeviceType():
+		return 'HM-WDS10-TH-O'
+
+	def updateValues(self):
 		print ('deviceTempHum  updatevalues')
-		self.interface.getResultFromScript()
 		
-	def print2():
-		print('device temphum: ')
+		self.temp= self.interface.updateWithTend(self.adr,'1','TEMPERATURE')
+		self.hum=self.interface.updateWithTend(self.adr,'1','HUMIDITY')
+		#update(self,serial,port,key,what='Value'):
+		self.print2()
+		
+	def print2(self):
+		print('device temphum: '+str(self.temp)+'c '+str(self.hum)+'%')
 	
 
 def test():
