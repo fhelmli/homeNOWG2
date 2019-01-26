@@ -83,12 +83,12 @@ def getValue(url,device,number,what):
     return variableContents
 
 
-def executeHMScript(url, script):
+def executeHMScript(url, username,password,script):
     hmScript = script
     
-    username = 'admin'
-    password = 'cool2piktm'
-    url = "http://10.0.0.2:8181/Test.exe"
+    #username = 'admin'
+    #password = 'cool2piktm'
+    #url = "http://10.0.0.2:8181/Test.exe"
 
     #url = "http://" + url + ":8181/Test.exe?" + hmScript
     
@@ -110,63 +110,77 @@ def executeHMScript(url, script):
     #print response
     
     return response
+    
+    
+def ping(host):
+	"""
+	Returns True if host responds to a ping request
+	"""
+	import subprocess, platform
 
+	# Ping parameters as function of OS
+	ping_str = "-n 1" if  platform.system().lower()=="windows" else "-c 1"
+	args = "ping " + " " + ping_str + " " + host
+	need_sh = False if  platform.system().lower()=="windows" else True
 
+	# Ping
+	return subprocess.call(args, shell=need_sh) == 0
 
+def ping2(adr):
+	import os
+	hostname = adr # "google.com" #example
+	response = os.system("ping -c 1 " + hostname)
 
+	#and then check the response...
+	if response == 0:
+		print hostname, 'is up!'
+		return 1
+	else:
+		print hostname, 'is down!'
+		return 0
 
-g_roomsScript = "var x = 42;\n"+\
-"object  oRoom;\n"+\
-"string  sRoomId;\n"+\
-"string  sChannelId;\n"+\
-"boolean bFirst       = true;\n"+\
-"boolean bFirstSecond = true;\n"+\
-"\n"+\
-"Write('{');\n"+\
-"foreach (sRoomId, dom.GetObject(ID_ROOMS).EnumUsedIDs())\n"+\
-"{\n"+\
-"    if (bFirst == false) {\n"+\
-"      WriteLine(',');\n"+\
-"    } else {\n"+\
-"      bFirst = false;\n"+\
-"    }\n"+\
-"    oRoom = dom.GetObject(sRoomId);\n"+\
-"	Write('\"' # sRoomId # '\": ');\n"+\
-"    Write('{\"Name\": \"');\n"+\
-"    WriteURL(oRoom.Name());\n"+\
-"    Write('\", \"TypeName\":\"' # oRoom.TypeName() # '_ROOMS');\n"+\
-"    Write('\", \"EnumInfo\":\"');\n"+\
-"    WriteURL(oRoom.EnumInfo());\n"+\
-"    Write('\", \"Channels\":[');\n"+\
-"	bFirstSecond = true;\n"+\
-"    foreach(sChannelId, oRoom.EnumUsedIDs()) {\n"+\
-"		if (bFirstSecond == false) {\n"+\
-"		  Write(',');\n"+\
-"		} else {\n"+\
-"		  bFirstSecond = false;\n"+\
-"		}\n"+\
-"		Write(sChannelId);\n"+\
-"    }\n"+\
-"    Write(']}');\n"+\
-"}\n"+\
-"WriteLine('}');";
-
-
-
+#returns if a string has a number
+def isaNumber(a):
+	number = 0
+	try:
+		val = float(a)
+		number =1
+	except:
+		number = 0
+	return number
 
 class hmInterface:
-	url=''
+	settings=[]
 	demo=0
-	def __init__(self,url,demo=0):
+	connected=0
+	def __init__(self,mySettings,demo=0):
 		print("hminterface constructor")
 		self.demo=demo
-		self.url=url
+		self.settings=mySettings
+		self.connected = 1#ping2(self.settings.url())
 		#test interface
 	
 	def getResultFromScript(self,script):
 		if self.demo==1:
 			return random.randrange(10,40)
-		return executeHMScript(self.url,script)
+		if self.connected==0:
+			raise Exception('no connection!!')
+		#return executeHMScript(self.settings.url(),self.settings.username(),self.settings.password(),script)
+		
+		
+		credentials = ('%s:%s' % (self.settings.username(), self.settings.password()))
+		encoded_credentials = base64.b64encode(credentials.encode('ascii'))
+
+		post = script #urlencode(hmScript)
+		req = urllib2.Request(self.settings.url(), post)
+		req.add_header('Authorization', 'Basic %s' % encoded_credentials.decode("ascii"))
+		response = urllib2.urlopen(req,timeout=self.settings.commTimeout).read()
+
+		return response
+		
+		
+		
+		
 		
 		url = "http://" + self.url + ":8181/Test.exe?" +script
 		#print('url: '+url)
@@ -194,7 +208,9 @@ class hmInterface:
 	
 	#what value or lastvalue
 	def updateId(self,id,what='Value'):
-		
+		if self.connected==0:
+			raise Exception('no connection!!')
+			
 		print ('hm interface updateid id: '+str(id))
 		if self.demo==1:
 			return random.randrange(10,40)
@@ -204,34 +220,52 @@ class hmInterface:
 		return res
 	
 	def update(self,serial,port,key,what='Value'):
-		print ('hm interface updateid normal: '+str(serial)+' '+str(port)+' '+str(key))
+		#print ('hm interface updateid normal: '+str(serial)+' '+str(port)+' '+str(key))
+
 		if self.demo==1:
 			return random.randrange(10,40)
+		if self.connected==0:
+			raise Exception('no connection!!')
 		script = 'mySysVar=dom.GetObject("BidCos-RF.'
 		script = script + serial + ':' +  port + '.' +  key +'"'
 		script = script + ').' + what + '();'
 		
 		val=self.getResultFromScript(script)
-		print ('val: '+ str(val))
+		#print ('val: '+ str(val))
 		res = find_between(str(val), '<mySysVar>', '</mySysVar>')
+		#print('res: '+str(res))
 		return res
 
+	def updateWithTend(self,serial,port,key):
+		if self.connected==0:
+			raise Exception('no connection!!')
+		val=self.update(serial,port,key,'Value')
+		lastVal=self.update(serial,port,key,'LastValue')
+		tendence=0
+		try:
+			tendence=float(val)-float(lastVal)
+		except:
+			tendence=0
+		dict={'value':val,'lastValue':lastVal,'tendence':tendence}
+		return dict
+			
+		
 	def generateDeviceList(self):
 		print('hminterface generate device list')
 	
 	def printc(self):
-		print('hminterface print:')
+		print('hminterface print: connected: '+str(self.connected))
 
 
 
 
 
-def test():
+if __name__ == "__main__":
 	print('hminterface test: ')
 	#res=getValue('10.0.0.1','KEQ0909042','4','SET_TEMPERATURE')
 	#print('result: '+res)
 	s=settings.settings(1)
-	interface=hmInterface(s.url())
+	interface=hmInterface(s)
 	#print('result: '+str(interface.update('KEQ0909042','4','ACTUAL_TEMPERATURE')))
 	
 	script='mySysVar=dom.GetObject("BidCos-RF.KEQ0909042:4.ACTUAL_TEMPERATURE").Value();'
@@ -256,5 +290,4 @@ def test():
 	#print('root: '+str(root))
 	#for child in root:
 		#print(str(child.tag)+'    '   +  str(child.attrib))
-	
-#test()
+

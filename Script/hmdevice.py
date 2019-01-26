@@ -1,3 +1,6 @@
+# this is old stuff
+
+
 # this class handles all hm devoces and sys vars
 import hminterface
 import settings
@@ -83,7 +86,7 @@ class hmDevice:
 
 
 
-def test():
+if __name__ == "__main__":
 	print('hmdevice test: ')
 	s=settings.settings(1)
 	interface = hminterface.hmInterface(s.url(),1)
@@ -94,5 +97,3 @@ def test():
 	mydev.printc()
 	mydev.updateIdFromSerial(interface)
 	mydev.printc()
-	
-#test()

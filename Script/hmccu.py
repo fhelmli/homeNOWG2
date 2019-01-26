@@ -49,11 +49,22 @@ class hmCCU:
 		print('hmccu update    devices: ')
 		result=self.interface.getResultFromScript(hmscripts.g_devicesScript)
 		result=result[0:result.find('<xml')]
-		print(result)
+		#print(result)
 		self.deviceObj=json.loads(result)
-		for key, val in  self.deviceObj:
-			print('key '+str(key)+' value: '+str(val))
-		print ('hmccu update    devices end')
+		#self.deviceObj.
+		print(str(self.devicesObj))
+		
+		#for id, device in devices.iteritems():
+		#		use the variable id (Key) and the 3 members of a device (Value):
+		#		device["Name"], device["Interface"]+"."+device["Address"] and device["HssType"]
+		
+		for key, val in  self.deviceObj.iteritems():
+			print('key '+str(key)+' value: '+str(val)+' adr: ')#+val[adress])
+			#print(type(val))
+			for k,v in val.iteritems():
+				print('          key: '+str(k)+' val: '+str(v))
+		#device obj aufbaen
+		print (' hmccu update    devices end')
 		
 		
 	def updateFunctions(self):
@@ -105,19 +116,15 @@ class hmCCU:
 
 
 
-def test():
+if __name__ == "__main__":
 	print('hmccu  test: ')
 	s=settings.settings(1)
-	i=hminterface.hmInterface(s.url())
+	i=hminterface.hmInterface(s)
 	myhmccu=hmCCU(i)
-	
 
 	
-	
 	#def find_between( s, start, end ):
-    #return s[s.find(start)+len(start):s.rfind(end)]       
-	
-	
+	#return s[s.find(start)+len(start):s.rfind(end)]       
 	
 	myhmccu.updateConfig()
 	
@@ -129,4 +136,4 @@ def test():
 	#myhmccu.printc()
 	#myhmccu.updateValues()
 	
-test()
+#test()

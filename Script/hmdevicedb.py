@@ -1,18 +1,33 @@
 import sys
-sys.path.append('devices')
+sys.path.append('Devices')
 import deviceBase
 import deviceTempHum
-
+import deviceTempController
+import hmccu
 
 
 import svgmanager
 
-class hmdevicedb:
+class hmDeviceDB:
 	svgManager=[]
 	def __init__(self,svgManager):
 		print ('hmdevicedb')
 		self.svgManager=svgManager
-	def getSVGClass(self,hmdevices):
-		if hmdevice=='HM-WDS10-TH-O':
-			return deviceTempHum(self.svgManager)
+		
+		
+		deviceTempHum
+		
+	
+	def getSVGClass(self,hmdevice,deviceObj,ccu):
+		print('hmdevicedb getsvgclass ask for: '+str(hmdevice))
+		if hmdevice==deviceTempHum.deviceTempHum.getDeviceType():
+			print('found!!')
+			obj=deviceTempHum.deviceTempHum(self.svgManager,deviceObj)
+			obj.interface=ccu.interface
+			return obj
+		if hmdevice==deviceTempController.deviceTempController.getDeviceType():
+			print('found!!')
+			obj=deviceTempController.deviceTempController(self.svgManager,deviceObj)
+			obj.interface=ccu.interface
+			return obj
 		return None
