@@ -219,6 +219,9 @@ class hmInterface:
 		res = find_between(str(val), '<mySysVar>', '</mySysVar>')
 		return res
 	
+	#serial must contain also interface!!!!
+	#example: hmip.023902390 
+	#example: bidcos-rf.heq0232323
 	def update(self,serial,port,key,what='Value'):
 		#print ('hm interface updateid normal: '+str(serial)+' '+str(port)+' '+str(key))
 
@@ -226,7 +229,7 @@ class hmInterface:
 			return random.randrange(10,40)
 		if self.connected==0:
 			raise Exception('no connection!!')
-		script = 'mySysVar=dom.GetObject("BidCos-RF.'
+		script = 'mySysVar=dom.GetObject("'
 		script = script + serial + ':' +  port + '.' +  key +'"'
 		script = script + ').' + what + '();'
 		
